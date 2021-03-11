@@ -1,12 +1,14 @@
 # CrowdZero
 PINT 2021
-Protótipo - 
-Desenho BD - V
-Criação das Query BD - 
-Desenvolvimento Mobile:
-  Login(Firebase) - 
-  Views:
-    Login - 
+<ul>
+<li>Protótipo - 
+<li>Desenho BD - V
+<li>Criação das Query BD - 
+<li>Desenvolvimento Mobile:
+  <li>Login(Firebase) - 
+  <li>Views:
+    <li>Login - 
     
-Desenvolvimento Web:
+<li>Desenvolvimento Web:
   
+<ul>
