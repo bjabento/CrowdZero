@@ -5,6 +5,5 @@ PINT 2021
 <li>André Lopes - https://github.com/andr3k1k0
 <li>Gonçalo Lopes - https://github.com/Goncalo24
 <li>Gustavo Coelho - https://github.com/gustavosc14
-<li> 
 <li>Trello: https://trello.com/b/WmWOsxvV/crowdzero
 <ul>
