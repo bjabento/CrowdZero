@@ -1,14 +1,8 @@
 # CrowdZero
 PINT 2021
 <ul>
-<li>Protótipo - 
-<li>Desenho BD - V
-<li>Criação das Query BD - 
-<li>Desenvolvimento Mobile:
-  <li>Login(Firebase) - 
-  <li>Views:
-    <li>Login - 
-    
-<li>Desenvolvimento Web:
-  
+<li>Bernardo Bento - https://github.com/bjabento
+<li>André Lopes - https://github.com/andr3k1k0
+<li>Gonçalo Lopes - https://github.com/Goncalo24
+<li>Gustavo Coelho - https://github.com/gustavosc14
 <ul>
