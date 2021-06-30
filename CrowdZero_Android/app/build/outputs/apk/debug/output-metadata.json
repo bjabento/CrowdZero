@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "com.example.crowdzero_android",
-  "variantName": "processDebugResources",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",

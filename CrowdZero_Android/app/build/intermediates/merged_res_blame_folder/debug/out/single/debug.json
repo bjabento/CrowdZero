@@ -4,40 +4,44 @@
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_backgrounglogin.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xhdpi\\backgrounglogin.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_loginbutton.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xxxhdpi\\loginbutton.png"
+    },
+    {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_loginbutton.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xxhdpi\\loginbutton.png"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_perfil.xml.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_perfil.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_backgrounglogin.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xxhdpi\\backgrounglogin.png"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_loginbutton.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xhdpi\\loginbutton.png"
     },
     {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_loginbutton.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-hdpi\\loginbutton.png"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_logorb.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xxxhdpi\\logorb.png"
     },
     {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -52,15 +56,79 @@
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_backgrounglogin.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-mdpi\\backgrounglogin.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_backgrounglogin.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-hdpi\\backgrounglogin.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_perfil.xml.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_logorb.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xxhdpi\\logorb.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_logorb.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xhdpi\\logorb.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_backgrounglogin.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-xxxhdpi\\backgrounglogin.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_logorb.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-mdpi\\logorb.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_logorb.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-hdpi\\logorb.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_loginbutton.png.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-mdpi\\loginbutton.png"
     }
 ]

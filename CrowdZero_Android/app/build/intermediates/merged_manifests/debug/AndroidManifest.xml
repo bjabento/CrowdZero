@@ -10,6 +10,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -21,14 +28,16 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CrowdZero_Android" >
-        <activity android:name="com.example.crowdzero_android.PerfilActivity" />
-        <activity android:name="com.example.crowdzero_android.MainActivity" >
+        <activity android:name="com.example.crowdzero_android.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.crowdzero_android.LoginActivity" />
+        <activity android:name="com.example.crowdzero_android.PerfilActivity" />
+        <activity android:name="com.example.crowdzero_android.MainActivity" />
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"

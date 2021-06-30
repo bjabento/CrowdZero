@@ -971,6 +971,7 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color backBlack
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1147,6 +1148,7 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color redCrowd
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1644,6 +1646,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable backgrounglogin
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1687,6 +1690,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable loginbutton
+drawable logorb
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1811,6 +1816,8 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnLogin
+id button
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -1864,6 +1871,7 @@ id disableHome
 id disablePostScroll
 id disableScroll
 id disjoint
+id divider
 id dragDown
 id dragEnd
 id dragLeft
@@ -1897,7 +1905,6 @@ id forever
 id ghost_view
 id ghost_view_holder
 id gone
-id google_sign_in
 id graph
 id graph_wrap
 id group_divider
@@ -1917,6 +1924,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id info
 id invisible
 id inward
@@ -2106,6 +2114,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2131,6 +2141,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txtEmailLogin
+id txtPassLogin
 id unchecked
 id uniform
 id unlabeled
@@ -2205,8 +2217,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_login
 layout activity_main
 layout activity_perfil
+layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
