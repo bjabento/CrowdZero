@@ -14,6 +14,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,6 +31,9 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.net.URL;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "";
@@ -32,18 +41,33 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private static final int SIGN_IN = 1;
     private int RC_SIGN_IN;
+    private String email, password;
+    private String url ="https://crowd0.herokuapp.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        email = password = "";
+
+        findViewById(R.id.btnLoginG).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnLoginG:
+                        signIn();
+                        break;
+                }
+            }
+        });
+
         findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btnLogin:
-                        signIn();
+                        login();
                         break;
                 }
             }
@@ -61,6 +85,11 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
     }
 
+    private void login() {
+        email = ((TextInputLayout)findViewById(R.id.txtEmailLogin)).getEditText().getText().toString();
+        password = ((TextInputLayout)findViewById(R.id.txtPassLogin)).getEditText().getText().toString();
+        
+    }
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
