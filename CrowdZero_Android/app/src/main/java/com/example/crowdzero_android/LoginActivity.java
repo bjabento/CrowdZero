@@ -88,7 +88,9 @@ public class LoginActivity extends AppCompatActivity {
     private void login() {
         email = ((TextInputLayout)findViewById(R.id.txtEmailLogin)).getEditText().getText().toString();
         password = ((TextInputLayout)findViewById(R.id.txtPassLogin)).getEditText().getText().toString();
-        
+
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
     }
 
     private void signIn() {
@@ -109,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            startActivity(new Intent(LoginActivity.this, PerfilActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         } catch (ApiException e) {
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());

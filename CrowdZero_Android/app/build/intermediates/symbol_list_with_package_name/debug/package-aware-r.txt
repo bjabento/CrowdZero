@@ -1644,6 +1644,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
 drawable backgrounglogin
@@ -1702,6 +1703,8 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable menu_background
+drawable menuuserbar
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1724,6 +1727,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable points
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1817,10 +1821,13 @@ id blocking
 id bottom
 id bounce
 id btnLogin
-id button
+id btnLoginG
+id btnMapa
+id btnMenu
 id buttonPanel
 id cache_measures
 id cancel_button
+id cardView
 id center
 id center_horizontal
 id center_vertical
@@ -1925,6 +1932,9 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView3
+id imageView4
+id imageView5
 id info
 id invisible
 id inward
@@ -1964,6 +1974,7 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id menuUserBar
 id message
 id middle
 id mini
@@ -2116,6 +2127,7 @@ id textTop
 id textView
 id textView2
 id textView3
+id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2143,6 +2155,7 @@ id transition_transform
 id triangle
 id txtEmailLogin
 id txtPassLogin
+id txtUsername
 id unchecked
 id uniform
 id unlabeled
