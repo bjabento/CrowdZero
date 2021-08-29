@@ -1,5 +1,6 @@
 com/example/crowdzero_android/PerfilActivity.java
  com.example.crowdzero_android.PerfilActivity
+ com.example.crowdzero_android.PerfilActivity$1
 com/example/crowdzero_android/SplashActivity.java
  com.example.crowdzero_android.SplashActivity
  com.example.crowdzero_android.SplashActivity$1

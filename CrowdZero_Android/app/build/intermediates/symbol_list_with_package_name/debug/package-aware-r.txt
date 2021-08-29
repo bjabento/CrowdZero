@@ -1647,6 +1647,7 @@ drawable abc_vector_test
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
+drawable backgroundperfil
 drawable backgrounglogin
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1822,6 +1823,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnBack
 id btnContactos
 id btnLogin
 id btnLoginG
@@ -1898,7 +1900,6 @@ id easeInOut
 id easeOut
 id edit_query
 id elastic
-id email
 id end
 id endToStart
 id enterAlways
@@ -1933,7 +1934,6 @@ id honorRequest
 id icon
 id icon_group
 id icon_only
-id id
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2014,7 +2014,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id name
 id navigation_header_container
 id never
 id noScroll
@@ -2080,7 +2079,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id signoutBtn
 id sin
 id skipCollapsed
 id slide
@@ -2158,7 +2156,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id txtEmailLogin
+id txtEmail
 id txtPassLogin
 id txtUsername
 id unchecked

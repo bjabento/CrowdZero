@@ -43,6 +43,5 @@ public class MainActivity extends AppCompatActivity {
 
     protected void openPerfil(){
         startActivity(new Intent(MainActivity.this, PerfilActivity.class));
-        finish();
     }
 }
