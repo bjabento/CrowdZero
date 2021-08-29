@@ -1,3 +1,5 @@
+com/example/crowdzero_android/BuildConfig.java
+ com.example.crowdzero_android.BuildConfig
 com/example/crowdzero_android/PerfilActivity.java
  com.example.crowdzero_android.PerfilActivity
 com/example/crowdzero_android/SplashActivity.java
@@ -5,8 +7,6 @@ com/example/crowdzero_android/SplashActivity.java
  com.example.crowdzero_android.SplashActivity$1
 com/example/crowdzero_android/MainActivity.java
  com.example.crowdzero_android.MainActivity
-com/example/crowdzero_android/BuildConfig.java
- com.example.crowdzero_android.BuildConfig
 com/example/crowdzero_android/LoginActivity.java
  com.example.crowdzero_android.LoginActivity
  com.example.crowdzero_android.LoginActivity$1

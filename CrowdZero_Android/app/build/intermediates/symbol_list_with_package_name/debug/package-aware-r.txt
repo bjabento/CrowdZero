@@ -1675,6 +1675,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable contactos
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1727,6 +1728,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable perfil
 drawable points
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1828,6 +1830,7 @@ id buttonPanel
 id cache_measures
 id cancel_button
 id cardView
+id cardView2
 id center
 id center_horizontal
 id center_vertical
@@ -1932,6 +1935,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
 id imageView3
 id imageView4
 id imageView5
