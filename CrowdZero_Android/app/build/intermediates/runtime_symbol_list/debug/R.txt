@@ -2155,6 +2155,7 @@ int id transition_position 0x7f0801a2
 int id transition_scene_layoutid_cache 0x7f0801a3
 int id transition_transform 0x7f0801a4
 int id triangle 0x7f0801a5
+int id txtContact 0x7f0801c9
 int id txtEmail 0x7f0801c7
 int id txtName 0x7f0801c8
 int id txtPassLogin 0x7f0801a7
