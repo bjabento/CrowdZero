@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_menu_background.png.flat",
         "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\drawable-mdpi\\menu_background.png"
+    },
+    {
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_loginbutton.png.flat",

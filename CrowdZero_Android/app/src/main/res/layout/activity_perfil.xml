@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBack" >
+        app:layout_constraintTop_toBottomOf="@+id/btnBack">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 app:srcCompat="@drawable/avatar" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -58,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="2dp"
                     android:text="Vitorino Antunes"
                     android:textColor="@color/white"
@@ -69,6 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:text="Agente de Saúde"
                     android:textColor="@color/white"
@@ -86,7 +88,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
+        android:elevation="100dp"
         android:hint="Email"
+        app:boxBackgroundMode="filled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +98,33 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:elevation="100dp"
+        android:hint="Nome"
+        app:boxBackgroundMode="filled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
