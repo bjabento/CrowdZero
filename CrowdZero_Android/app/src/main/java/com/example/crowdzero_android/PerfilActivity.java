@@ -25,6 +25,7 @@ import com.google.android.gms.common.api.Status;
 
 public class PerfilActivity extends AppCompatActivity {
 
+    private ImageView backButton;
     private TextView name, email, id;
     private Button signoutBtn;
 
@@ -35,13 +36,21 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        name = findViewById(R.id.name);
+        backButton = findViewById(R.id.btnBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        /*name = findViewById(R.id.name);
         email = findViewById(R.id.email);
         id = findViewById(R.id.id);
-        signoutBtn = findViewById(R.id.signoutBtn);
+        signoutBtn = findViewById(R.id.signoutBtn);*/
     }
 
-    private void gotoMainActivity() {
+    /*private void gotoMainActivity() {
         startActivity(new Intent(PerfilActivity.this, MainActivity.class));
         finish();
     }
@@ -56,5 +65,5 @@ public class PerfilActivity extends AppCompatActivity {
             email.setText(account.getEmail());
             id.setText(account.getId());
         }
-    }
+    }*/
 }
