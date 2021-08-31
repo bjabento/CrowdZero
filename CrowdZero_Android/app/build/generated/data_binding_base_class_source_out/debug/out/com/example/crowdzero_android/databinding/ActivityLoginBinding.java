@@ -29,6 +29,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final SignInButton btnLoginG;
 
   @NonNull
+  public final TextView btnReg;
+
+  @NonNull
   public final View divider;
 
   @NonNull
@@ -41,26 +44,23 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView textView2;
 
   @NonNull
-  public final TextView textView3;
-
-  @NonNull
   public final TextInputLayout txtEmail;
 
   @NonNull
   public final TextInputLayout txtPassLogin;
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnLogin,
-      @NonNull SignInButton btnLoginG, @NonNull View divider, @NonNull ImageView imageView,
-      @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3,
+      @NonNull SignInButton btnLoginG, @NonNull TextView btnReg, @NonNull View divider,
+      @NonNull ImageView imageView, @NonNull TextView textView, @NonNull TextView textView2,
       @NonNull TextInputLayout txtEmail, @NonNull TextInputLayout txtPassLogin) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.btnLoginG = btnLoginG;
+    this.btnReg = btnReg;
     this.divider = divider;
     this.imageView = imageView;
     this.textView = textView;
     this.textView2 = textView2;
-    this.textView3 = textView3;
     this.txtEmail = txtEmail;
     this.txtPassLogin = txtPassLogin;
   }
@@ -104,6 +104,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnReg;
+      TextView btnReg = rootView.findViewById(id);
+      if (btnReg == null) {
+        break missingId;
+      }
+
       id = R.id.divider;
       View divider = rootView.findViewById(id);
       if (divider == null) {
@@ -128,12 +134,6 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView3;
-      TextView textView3 = rootView.findViewById(id);
-      if (textView3 == null) {
-        break missingId;
-      }
-
       id = R.id.txtEmail;
       TextInputLayout txtEmail = rootView.findViewById(id);
       if (txtEmail == null) {
@@ -146,8 +146,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, btnLogin, btnLoginG, divider,
-          imageView, textView, textView2, textView3, txtEmail, txtPassLogin);
+      return new ActivityLoginBinding((ConstraintLayout) rootView, btnLogin, btnLoginG, btnReg,
+          divider, imageView, textView, textView2, txtEmail, txtPassLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1865,6 +1865,8 @@ id btnMenu
 id btnMenu2
 id btnPerfil
 id btnPoints
+id btnReg
+id btnRegist
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -2172,7 +2174,6 @@ id textStart
 id textTop
 id textView
 id textView2
-id textView3
 id textView5
 id text_input_end_icon
 id text_input_error_icon
@@ -2200,10 +2201,14 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id txtAddress
+id txtCC
 id txtContact
+id txtContacto
 id txtEmail
+id txtNAME
 id txtName
 id txtPassLogin
+id txtPassreg
 id txtPassword
 id txtUsername
 id unchecked
@@ -2284,6 +2289,7 @@ layout activity_login
 layout activity_main
 layout activity_mapa
 layout activity_perfil
+layout activity_registar
 layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item

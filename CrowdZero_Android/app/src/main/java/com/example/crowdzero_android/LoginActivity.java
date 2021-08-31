@@ -54,6 +54,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btnReg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnReg:
+                        startActivity(new Intent(LoginActivity.this, RegistarActivity.class));
+                        break;
+                }
+            }
+        });
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);

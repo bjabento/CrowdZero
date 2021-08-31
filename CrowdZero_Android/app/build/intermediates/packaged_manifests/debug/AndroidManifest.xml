@@ -15,8 +15,8 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -42,11 +42,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CrowdZero_Android" >
-        android:usesCleartextTraffic="true"
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB5ky5zX6s2jM5vO73UCb7oTdvtgHDgmJs" />
-
+        <activity android:name="com.example.crowdzero_android.RegistarActivity" />
         <activity android:name="com.example.crowdzero_android.MapaActivity" />
         <activity android:name="com.example.crowdzero_android.SplashActivity" >
             <intent-filter>
@@ -58,6 +54,11 @@
         <activity android:name="com.example.crowdzero_android.LoginActivity" />
         <activity android:name="com.example.crowdzero_android.PerfilActivity" />
         <activity android:name="com.example.crowdzero_android.MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB5ky5zX6s2jM5vO73UCb7oTdvtgHDgmJs" />
+
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"
