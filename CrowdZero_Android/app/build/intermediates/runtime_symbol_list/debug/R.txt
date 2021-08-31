@@ -1760,7 +1760,9 @@ int drawable notification_tile_bg 0x7f0700b1
 int drawable notify_panel_notification_icon_bg 0x7f0700b2
 int drawable perfil 0x7f0700b3
 int drawable points 0x7f0700b4
+int drawable populado1 0x7f0700b9
 int drawable populado2 0x7f0700b5
+int drawable populado3 0x7f0700ba
 int drawable test_custom_background 0x7f0700b6
 int drawable tooltip_frame_dark 0x7f0700b7
 int drawable tooltip_frame_light 0x7f0700b8
@@ -1864,8 +1866,12 @@ int id btnMenu 0x7f080060
 int id btnMenu2 0x7f080061
 int id btnPerfil 0x7f080062
 int id btnPoints 0x7f080063
+int id btnPop1 0x7f0801cd
+int id btnPop2 0x7f0801cb
+int id btnPop3 0x7f0801ce
 int id btnReg 0x7f080064
 int id btnRegist 0x7f080065
+int id btnSubmeter 0x7f0801d0
 int id buttonPanel 0x7f080066
 int id cache_measures 0x7f080067
 int id cancel_action 0x7f080068
@@ -1978,7 +1984,6 @@ int id ignoreRequest 0x7f0800d2
 int id image 0x7f0800d3
 int id imageView 0x7f0800d4
 int id imageView3 0x7f0800d5
-int id imageView4 0x7f0800d6
 int id info 0x7f0800d7
 int id invisible 0x7f0800d8
 int id inward 0x7f0800d9

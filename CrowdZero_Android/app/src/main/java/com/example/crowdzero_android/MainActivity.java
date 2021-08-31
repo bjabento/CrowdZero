@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://crowdzeromapi.herokuapp.com:3001";
+        String url = "https://crowdzeromapi.herokuapp.com/user";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

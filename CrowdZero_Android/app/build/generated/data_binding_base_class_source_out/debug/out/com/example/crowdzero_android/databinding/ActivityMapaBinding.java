@@ -27,17 +27,30 @@ public final class ActivityMapaBinding implements ViewBinding {
   public final Button btnMenu2;
 
   @NonNull
-  public final ImageView imageView4;
+  public final ImageView btnPop1;
+
+  @NonNull
+  public final ImageView btnPop2;
+
+  @NonNull
+  public final ImageView btnPop3;
+
+  @NonNull
+  public final Button btnSubmeter;
 
   @NonNull
   public final MapView mapView;
 
   private ActivityMapaBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnMapa2,
-      @NonNull Button btnMenu2, @NonNull ImageView imageView4, @NonNull MapView mapView) {
+      @NonNull Button btnMenu2, @NonNull ImageView btnPop1, @NonNull ImageView btnPop2,
+      @NonNull ImageView btnPop3, @NonNull Button btnSubmeter, @NonNull MapView mapView) {
     this.rootView = rootView;
     this.btnMapa2 = btnMapa2;
     this.btnMenu2 = btnMenu2;
-    this.imageView4 = imageView4;
+    this.btnPop1 = btnPop1;
+    this.btnPop2 = btnPop2;
+    this.btnPop3 = btnPop3;
+    this.btnSubmeter = btnSubmeter;
     this.mapView = mapView;
   }
 
@@ -80,9 +93,27 @@ public final class ActivityMapaBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView4;
-      ImageView imageView4 = rootView.findViewById(id);
-      if (imageView4 == null) {
+      id = R.id.btnPop1;
+      ImageView btnPop1 = rootView.findViewById(id);
+      if (btnPop1 == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPop2;
+      ImageView btnPop2 = rootView.findViewById(id);
+      if (btnPop2 == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPop3;
+      ImageView btnPop3 = rootView.findViewById(id);
+      if (btnPop3 == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSubmeter;
+      Button btnSubmeter = rootView.findViewById(id);
+      if (btnSubmeter == null) {
         break missingId;
       }
 
@@ -92,8 +123,8 @@ public final class ActivityMapaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMapaBinding((ConstraintLayout) rootView, btnMapa2, btnMenu2, imageView4,
-          mapView);
+      return new ActivityMapaBinding((ConstraintLayout) rootView, btnMapa2, btnMenu2, btnPop1,
+          btnPop2, btnPop3, btnSubmeter, mapView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

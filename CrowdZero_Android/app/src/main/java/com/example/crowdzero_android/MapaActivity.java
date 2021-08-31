@@ -3,6 +3,7 @@ package com.example.crowdzero_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,6 +26,17 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
         }
+
+        findViewById(R.id.btnMenu2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnMenu2:
+                        finish();
+                        break;
+                }
+            }
+        });
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);

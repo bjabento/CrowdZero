@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int SIGN_IN = 1;
     private int RC_SIGN_IN;
     private String email, password;
-    private String url ="https://crowd0.herokuapp.com/";
+    private String url ="https://crowdzeromapi.herokuapp.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
