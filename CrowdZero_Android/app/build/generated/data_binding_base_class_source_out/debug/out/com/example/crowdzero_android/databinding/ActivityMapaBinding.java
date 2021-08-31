@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,13 +27,17 @@ public final class ActivityMapaBinding implements ViewBinding {
   public final Button btnMenu2;
 
   @NonNull
+  public final ImageView imageView4;
+
+  @NonNull
   public final MapView mapView;
 
   private ActivityMapaBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnMapa2,
-      @NonNull Button btnMenu2, @NonNull MapView mapView) {
+      @NonNull Button btnMenu2, @NonNull ImageView imageView4, @NonNull MapView mapView) {
     this.rootView = rootView;
     this.btnMapa2 = btnMapa2;
     this.btnMenu2 = btnMenu2;
+    this.imageView4 = imageView4;
     this.mapView = mapView;
   }
 
@@ -75,13 +80,20 @@ public final class ActivityMapaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView4;
+      ImageView imageView4 = rootView.findViewById(id);
+      if (imageView4 == null) {
+        break missingId;
+      }
+
       id = R.id.mapView;
       MapView mapView = rootView.findViewById(id);
       if (mapView == null) {
         break missingId;
       }
 
-      return new ActivityMapaBinding((ConstraintLayout) rootView, btnMapa2, btnMenu2, mapView);
+      return new ActivityMapaBinding((ConstraintLayout) rootView, btnMapa2, btnMenu2, imageView4,
+          mapView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

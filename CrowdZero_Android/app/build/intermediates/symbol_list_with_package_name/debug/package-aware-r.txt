@@ -1761,6 +1761,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable perfil
 drawable points
+drawable populado2
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1976,6 +1977,7 @@ id ignoreRequest
 id image
 id imageView
 id imageView3
+id imageView4
 id info
 id invisible
 id inward

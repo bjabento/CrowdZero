@@ -11,21 +11,21 @@
 9-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
 10
 11    <supports-screens
-11-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:31:5-36:40
+11-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:32:5-37:40
 12        android:anyDensity="true"
-12-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:32:9-34
+12-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:33:9-34
 13        android:largeScreens="true"
-13-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:33:9-36
+13-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:34:9-36
 14        android:normalScreens="true"
-14-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:34:9-37
+14-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:35:9-37
 15        android:smallScreens="true"
-15-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:35:9-36
+15-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:36:9-36
 16        android:xlargeScreens="true" />
-16-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:36:9-37
+16-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:37:9-37
 17
 18    <uses-permission android:name="android.permission.INTERNET" />
-18-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:38:5-67
-18-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:38:22-64
+18-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:39:5-67
+18-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:39:22-64
 19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 19-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:40:5-79
 19-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:40:22-76
@@ -52,7 +52,7 @@
 32    </queries>
 33
 34    <application
-34-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:5:5-29:19
+34-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:5:5-30:19
 35        android:allowBackup="true"
 35-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:6:9-35
 36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -70,85 +70,86 @@
 43        android:testOnly="true"
 44        android:theme="@style/Theme.CrowdZero_Android" >
 44-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:11:9-55
-45        <meta-data
-45-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:13:9-15:70
-46            android:name="com.google.android.geo.API_KEY"
-46-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:14:13-58
-47            android:value="AIzaSyB5ky5zX6s2jM5vO73UCb7oTdvtgHDgmJs" />
-47-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:15:13-68
-48
-49        <activity android:name="com.example.crowdzero_android.MapaActivity" />
-49-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:17:9-50
-49-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:17:19-47
-50        <activity android:name="com.example.crowdzero_android.SplashActivity" >
-50-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:19:9-25:20
-50-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:19:19-49
-51            <intent-filter>
-51-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:20:13-24:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:21:17-69
-52-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:21:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:23:17-77
-54-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:23:27-74
-55            </intent-filter>
-56        </activity>
-57        <activity android:name="com.example.crowdzero_android.LoginActivity" />
-57-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:26:9-51
-57-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:26:19-48
-58        <activity android:name="com.example.crowdzero_android.PerfilActivity" />
-58-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:27:9-52
-58-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:27:19-49
-59        <activity android:name="com.example.crowdzero_android.MainActivity" />
-59-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:28:9-50
-59-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:28:19-47
-60        <activity
-60-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
-61            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-61-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
-62            android:excludeFromRecents="true"
-62-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
-63            android:exported="false"
-63-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
-64            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-64-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
-65        <!--
-66            Service handling Google Sign-In user revocation. For apps that do not integrate with
-67            Google Sign-In, this service will never be started.
-68        -->
-69        <service
-69-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
-70            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-70-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
-71            android:exported="true"
-71-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
-72            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-72-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
-73            android:visibleToInstantApps="true" /> <!-- Needs to be explicitly declared on P+ -->
-73-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
-74        <uses-library
-74-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:39:9-41:40
-75            android:name="org.apache.http.legacy"
-75-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
-76            android:required="false" />
-76-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:41:13-37
-77
-78        <activity
-78-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-79            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-79-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-80            android:exported="false"
-80-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-81            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-81-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-82
-83        <meta-data
-83-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
-84            android:name="com.google.android.gms.version"
-84-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
-85            android:value="@integer/google_play_services_version" />
-85-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
-86    </application>
-87
-88</manifest>
+45        android:usesCleartextTraffic="true"
+46        <meta-data
+46-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:14:9-16:70
+47            android:name="com.google.android.geo.API_KEY"
+47-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:15:13-58
+48            android:value="AIzaSyB5ky5zX6s2jM5vO73UCb7oTdvtgHDgmJs" />
+48-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:16:13-68
+49
+50        <activity android:name="com.example.crowdzero_android.MapaActivity" />
+50-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:18:9-50
+50-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:18:19-47
+51        <activity android:name="com.example.crowdzero_android.SplashActivity" >
+51-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:20:9-26:20
+51-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:20:19-49
+52            <intent-filter>
+52-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:21:13-25:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:22:17-69
+53-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:22:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:24:17-77
+55-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:24:27-74
+56            </intent-filter>
+57        </activity>
+58        <activity android:name="com.example.crowdzero_android.LoginActivity" />
+58-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:27:9-51
+58-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:27:19-48
+59        <activity android:name="com.example.crowdzero_android.PerfilActivity" />
+59-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:28:9-52
+59-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:28:19-49
+60        <activity android:name="com.example.crowdzero_android.MainActivity" />
+60-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:29:9-50
+60-->C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:29:19-47
+61        <activity
+61-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+62            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+62-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+63            android:excludeFromRecents="true"
+63-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+64            android:exported="false"
+64-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+66        <!--
+67            Service handling Google Sign-In user revocation. For apps that do not integrate with
+68            Google Sign-In, this service will never be started.
+69        -->
+70        <service
+70-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+71            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+71-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+72            android:exported="true"
+72-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+73            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+73-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+74            android:visibleToInstantApps="true" /> <!-- Needs to be explicitly declared on P+ -->
+74-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+75        <uses-library
+75-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:39:9-41:40
+76            android:name="org.apache.http.legacy"
+76-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
+77            android:required="false" />
+77-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:41:13-37
+78
+79        <activity
+79-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+80            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+80-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+81            android:exported="false"
+81-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+82            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+82-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+83
+84        <meta-data
+84-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+85            android:name="com.google.android.gms.version"
+85-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+86            android:value="@integer/google_play_services_version" />
+86-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+87    </application>
+88
+89</manifest>
