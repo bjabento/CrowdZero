@@ -1,42 +1,42 @@
 [
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_pontos.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_pontos.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_perfil.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_perfil.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\fragment_first.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_second.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\fragment_second.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mapa.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_mapa.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_registar.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_registar.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_pontos.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_pontos.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_mapa.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_mapa.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_second.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\fragment_second.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_pontos.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\content_pontos.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_registar.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_registar.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\fragment_first.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_contactos.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_contactos.xml"
     },
     {
-        "merged": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
-        "source": "C:\\Users\\bjabe\\OneDrive\\Ambiente de Trabalho\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_perfil.xml",
+        "source": "C:\\Users\\gonca\\OneDrive\\Ambiente de Trabalho\\Uni\\PINT\\CrowdZero\\CrowdZero_Android\\app\\src\\main\\res\\layout\\activity_perfil.xml"
     }
 ]

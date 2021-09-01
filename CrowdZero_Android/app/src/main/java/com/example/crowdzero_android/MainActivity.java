@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         c1 = findViewById(R.id.btnPoints);
         c2 = findViewById(R.id.btnPerfil);
+        c3 = findViewById(R.id.btnContactos);
         bMap = findViewById(R.id.btnMapa);
 
         c1.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btnPoints:
-
+                        startActivity(new Intent(MainActivity.this, PontosActivity.class));
                         break;
                 }
             }
@@ -62,7 +63,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btnPerfil:
-                        openPerfil();
+                        startActivity(new Intent(MainActivity.this, PerfilActivity.class));
+                        break;
+                }
+            }
+        });
+
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnContactos:
+                        startActivity(new Intent(MainActivity.this, ContactosActivity.class));
                         break;
                 }
             }
@@ -79,10 +91,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    protected void openPerfil(){
-        startActivity(new Intent(MainActivity.this, PerfilActivity.class));
     }
 
     protected void openMapa(){

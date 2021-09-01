@@ -25,7 +25,7 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final ImageView btnBack;
 
   @NonNull
-  public final ImageView imageView3;
+  public final ImageView imageView4;
 
   @NonNull
   public final CardView menuUserBar;
@@ -52,13 +52,13 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final TextView txtUsername;
 
   private ActivityPerfilBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull ImageView imageView3, @NonNull CardView menuUserBar, @NonNull TextView textView5,
+      @NonNull ImageView imageView4, @NonNull CardView menuUserBar, @NonNull TextView textView5,
       @NonNull TextInputLayout txtAddress, @NonNull TextInputLayout txtContact,
       @NonNull TextInputLayout txtEmail, @NonNull TextInputLayout txtName,
       @NonNull TextInputLayout txtPassword, @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnBack = btnBack;
-    this.imageView3 = imageView3;
+    this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
     this.textView5 = textView5;
     this.txtAddress = txtAddress;
@@ -102,9 +102,9 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView3;
-      ImageView imageView3 = rootView.findViewById(id);
-      if (imageView3 == null) {
+      id = R.id.imageView4;
+      ImageView imageView4 = rootView.findViewById(id);
+      if (imageView4 == null) {
         break missingId;
       }
 
@@ -156,7 +156,7 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, imageView3,
+      return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, imageView4,
           menuUserBar, textView5, txtAddress, txtContact, txtEmail, txtName, txtPassword,
           txtUsername);
     }

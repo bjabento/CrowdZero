@@ -46,7 +46,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final CardView cardViewPontos;
 
   @NonNull
-  public final ImageView imageView3;
+  public final ImageView imageView4;
 
   @NonNull
   public final CardView menuUserBar;
@@ -60,7 +60,7 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnContactos,
       @NonNull Button btnMapa, @NonNull Button btnMenu, @NonNull ImageView btnPerfil,
       @NonNull ImageView btnPoints, @NonNull CardView cardView3, @NonNull CardView cardViewPerfil,
-      @NonNull CardView cardViewPontos, @NonNull ImageView imageView3,
+      @NonNull CardView cardViewPontos, @NonNull ImageView imageView4,
       @NonNull CardView menuUserBar, @NonNull TextView textView5, @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnContactos = btnContactos;
@@ -71,7 +71,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.cardView3 = cardView3;
     this.cardViewPerfil = cardViewPerfil;
     this.cardViewPontos = cardViewPontos;
-    this.imageView3 = imageView3;
+    this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
     this.textView5 = textView5;
     this.txtUsername = txtUsername;
@@ -152,9 +152,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView3;
-      ImageView imageView3 = rootView.findViewById(id);
-      if (imageView3 == null) {
+      id = R.id.imageView4;
+      ImageView imageView4 = rootView.findViewById(id);
+      if (imageView4 == null) {
         break missingId;
       }
 
@@ -177,7 +177,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, btnContactos, btnMapa, btnMenu,
-          btnPerfil, btnPoints, cardView3, cardViewPerfil, cardViewPontos, imageView3, menuUserBar,
+          btnPerfil, btnPoints, cardView3, cardViewPerfil, cardViewPontos, imageView4, menuUserBar,
           textView5, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
