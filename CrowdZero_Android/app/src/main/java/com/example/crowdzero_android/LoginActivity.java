@@ -81,6 +81,8 @@ public class LoginActivity extends AppCompatActivity {
         email = ((TextInputLayout)findViewById(R.id.txtEmail)).getEditText().getText().toString();
         password = ((TextInputLayout)findViewById(R.id.txtPassLogin)).getEditText().getText().toString();
 
+        
+
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         finish();
     }
