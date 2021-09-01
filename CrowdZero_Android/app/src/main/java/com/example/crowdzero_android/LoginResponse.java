@@ -19,17 +19,17 @@ public class DataParsingClass {
             jsonString = new JSONObject(Result);
             if (jsonString.length() > 0) {
                 if (jsonString.has("userid")) {
-                    LoginDataClass.userid= jsonString
+                    LoginResponse.userid= jsonString
                             .getString("userid");
 
                 }
                 if (jsonString.has("success")) {
-                    LoginDataClass.success= jsonString
+                    LoginResponse.success= jsonString
                             .getString("success");
 
                 }
                 if (jsonString.has("fail")) {
-                    LoginDataClass.fail= jsonString
+                    LoginResponse.fail= jsonString
                             .getString("fail");
 
                 }
