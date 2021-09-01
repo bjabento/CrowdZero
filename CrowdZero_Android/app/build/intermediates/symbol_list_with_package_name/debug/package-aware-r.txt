@@ -1676,6 +1676,7 @@ drawable abc_vector_test
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
+drawable background
 drawable backgroundperfil
 drawable backgrounglogin
 drawable btn_checkbox_checked_mtrl
@@ -1761,9 +1762,12 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable perfil
 drawable points
+drawable pontos
 drawable populado1
 drawable populado2
 drawable populado3
+drawable support
+drawable termos
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
