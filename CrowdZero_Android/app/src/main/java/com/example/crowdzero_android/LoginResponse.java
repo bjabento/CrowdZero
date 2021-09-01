@@ -11,7 +11,7 @@ public class DataParsingClass {
     public static ArrayList<NameValuePair> nameValuePairs;
 
     public static void LoginData() {
-        Url ="PUT YOUR LOGIN API";
+        Url ="https://crowdzeromapi.herokuapp.com/";
         Result = HttpClass.getData(Url);
 
         try {
