@@ -42,6 +42,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CrowdZero_Android" >
+        <activity
+            android:name="com.example.crowdzero_android.PontosActivity"
+            android:label="@string/title_activity_pontos"
+            android:theme="@style/Theme.CrowdZero_Android.NoActionBar" />
         <activity android:name="com.example.crowdzero_android.RegistarActivity" />
         <activity android:name="com.example.crowdzero_android.MapaActivity" />
         <activity android:name="com.example.crowdzero_android.SplashActivity" >
