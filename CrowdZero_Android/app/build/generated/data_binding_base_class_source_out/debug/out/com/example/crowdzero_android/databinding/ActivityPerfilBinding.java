@@ -31,10 +31,10 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final CardView menuUserBar;
 
   @NonNull
-  public final TextView textView5;
+  public final TextInputLayout txtAddress;
 
   @NonNull
-  public final TextInputLayout txtAddress;
+  public final TextView txtCargo;
 
   @NonNull
   public final TextInputLayout txtContact;
@@ -52,16 +52,17 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final TextView txtUsername;
 
   private ActivityPerfilBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull ImageView imageView4, @NonNull CardView menuUserBar, @NonNull TextView textView5,
-      @NonNull TextInputLayout txtAddress, @NonNull TextInputLayout txtContact,
-      @NonNull TextInputLayout txtEmail, @NonNull TextInputLayout txtName,
-      @NonNull TextInputLayout txtPassword, @NonNull TextView txtUsername) {
+      @NonNull ImageView imageView4, @NonNull CardView menuUserBar,
+      @NonNull TextInputLayout txtAddress, @NonNull TextView txtCargo,
+      @NonNull TextInputLayout txtContact, @NonNull TextInputLayout txtEmail,
+      @NonNull TextInputLayout txtName, @NonNull TextInputLayout txtPassword,
+      @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
-    this.textView5 = textView5;
     this.txtAddress = txtAddress;
+    this.txtCargo = txtCargo;
     this.txtContact = txtContact;
     this.txtEmail = txtEmail;
     this.txtName = txtName;
@@ -114,15 +115,15 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView5;
-      TextView textView5 = rootView.findViewById(id);
-      if (textView5 == null) {
-        break missingId;
-      }
-
       id = R.id.txtAddress;
       TextInputLayout txtAddress = rootView.findViewById(id);
       if (txtAddress == null) {
+        break missingId;
+      }
+
+      id = R.id.txtCargo;
+      TextView txtCargo = rootView.findViewById(id);
+      if (txtCargo == null) {
         break missingId;
       }
 
@@ -157,7 +158,7 @@ public final class ActivityPerfilBinding implements ViewBinding {
       }
 
       return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, imageView4,
-          menuUserBar, textView5, txtAddress, txtContact, txtEmail, txtName, txtPassword,
+          menuUserBar, txtAddress, txtCargo, txtContact, txtEmail, txtName, txtPassword,
           txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -2236,7 +2236,6 @@ id textTop
 id textView
 id textView2
 id textView4
-id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2266,6 +2265,7 @@ id transition_transform
 id triangle
 id txtAddress
 id txtCC
+id txtCargo
 id txtContact
 id txtContacto
 id txtEmail

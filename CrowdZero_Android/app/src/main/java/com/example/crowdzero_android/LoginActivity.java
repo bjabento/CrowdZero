@@ -2,6 +2,7 @@ package com.example.crowdzero_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,11 +39,14 @@ public class LoginActivity extends AppCompatActivity {
     private static final int SIGN_IN = 1;
     private int RC_SIGN_IN;
     private String[] rIdu, rCargo, rNome, rEmail, rPass;
+    private Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        session = new Session(this);
 
         findViewById(R.id.btnLoginG).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,8 +99,6 @@ public class LoginActivity extends AppCompatActivity {
         String email = ((TextInputLayout)findViewById(R.id.txtEmail)).getEditText().getText().toString();
         String password = ((TextInputLayout)findViewById(R.id.txtPassLogin)).getEditText().getText().toString();
 
-
-
         StringRequest sr = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -113,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (rPass[0].equals(password)){
                                     Log.e("HttpClient", "success! response: " + response.toString());
+                                    session.setId(rIdu[0] = rIdu[0].replace("\"", ""));
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     finish();
                                 }

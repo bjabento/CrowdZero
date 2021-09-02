@@ -36,21 +36,21 @@ public final class ActivityPontosBinding implements ViewBinding {
   public final TextView textView4;
 
   @NonNull
-  public final TextView textView5;
+  public final TextView txtCargo;
 
   @NonNull
   public final TextView txtUsername;
 
   private ActivityPontosBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView3,
       @NonNull CardView menuUserBar, @NonNull ImageView pointslogo, @NonNull TextView pointsnum,
-      @NonNull TextView textView4, @NonNull TextView textView5, @NonNull TextView txtUsername) {
+      @NonNull TextView textView4, @NonNull TextView txtCargo, @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.imageView3 = imageView3;
     this.menuUserBar = menuUserBar;
     this.pointslogo = pointslogo;
     this.pointsnum = pointsnum;
     this.textView4 = textView4;
-    this.textView5 = textView5;
+    this.txtCargo = txtCargo;
     this.txtUsername = txtUsername;
   }
 
@@ -111,9 +111,9 @@ public final class ActivityPontosBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView5;
-      TextView textView5 = rootView.findViewById(id);
-      if (textView5 == null) {
+      id = R.id.txtCargo;
+      TextView txtCargo = rootView.findViewById(id);
+      if (txtCargo == null) {
         break missingId;
       }
 
@@ -124,7 +124,7 @@ public final class ActivityPontosBinding implements ViewBinding {
       }
 
       return new ActivityPontosBinding((ConstraintLayout) rootView, imageView3, menuUserBar,
-          pointslogo, pointsnum, textView4, textView5, txtUsername);
+          pointslogo, pointsnum, textView4, txtCargo, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

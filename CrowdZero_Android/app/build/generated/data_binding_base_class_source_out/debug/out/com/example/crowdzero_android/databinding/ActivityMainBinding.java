@@ -52,7 +52,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final CardView menuUserBar;
 
   @NonNull
-  public final TextView textView5;
+  public final TextView txtCargo;
 
   @NonNull
   public final TextView txtUsername;
@@ -61,7 +61,7 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull Button btnMapa, @NonNull Button btnMenu, @NonNull ImageView btnPerfil,
       @NonNull ImageView btnPoints, @NonNull CardView cardView3, @NonNull CardView cardViewPerfil,
       @NonNull CardView cardViewPontos, @NonNull ImageView imageView4,
-      @NonNull CardView menuUserBar, @NonNull TextView textView5, @NonNull TextView txtUsername) {
+      @NonNull CardView menuUserBar, @NonNull TextView txtCargo, @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnContactos = btnContactos;
     this.btnMapa = btnMapa;
@@ -73,7 +73,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.cardViewPontos = cardViewPontos;
     this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
-    this.textView5 = textView5;
+    this.txtCargo = txtCargo;
     this.txtUsername = txtUsername;
   }
 
@@ -164,9 +164,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView5;
-      TextView textView5 = rootView.findViewById(id);
-      if (textView5 == null) {
+      id = R.id.txtCargo;
+      TextView txtCargo = rootView.findViewById(id);
+      if (txtCargo == null) {
         break missingId;
       }
 
@@ -178,7 +178,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
       return new ActivityMainBinding((ConstraintLayout) rootView, btnContactos, btnMapa, btnMenu,
           btnPerfil, btnPoints, cardView3, cardViewPerfil, cardViewPontos, imageView4, menuUserBar,
-          textView5, txtUsername);
+          txtCargo, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
