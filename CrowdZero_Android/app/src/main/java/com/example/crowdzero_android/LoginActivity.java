@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private static final int SIGN_IN = 1;
     private int RC_SIGN_IN;
+    private String[] rIdu, rCargo, rNome, rEmail, rPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
@@ -95,16 +95,38 @@ public class LoginActivity extends AppCompatActivity {
         String email = ((TextInputLayout)findViewById(R.id.txtEmail)).getEditText().getText().toString();
         String password = ((TextInputLayout)findViewById(R.id.txtPassLogin)).getEditText().getText().toString();
 
+
+
         StringRequest sr = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.e("HttpClient", "success! response: " + response.toString());
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+                        try {
+                            if (!response.equals("[]")){
+                                String[] sep = response.split(":");
+                                rIdu = sep[1].split(",");
+                                rCargo = sep[2].split(",");
+                                rNome = sep[3].split(",");
+                                rEmail = sep[5].split(",");
+                                rPass = sep[6].split(",");
+                                rPass[0] = rPass[0].replace("\"", "");
+
+                                if (rPass[0].equals(password)){
+                                    Log.e("HttpClient", "success! response: " + response.toString());
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this, "Credenciais incorretas", Toast.LENGTH_SHORT).show();
+                                }
+                               /* Toast.makeText(LoginActivity.this, sep[6].toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, rPass[0].toString(), Toast.LENGTH_SHORT).show();*/
+                            }
+                        }catch(Error error) {
+                            Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
                     }
-                },
-                new Response.ErrorListener() {
+                }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("HttpClient", "error: " + error.toString());
@@ -114,8 +136,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("user","YOUR USERNAME");
-                params.put("pass","YOUR PASSWORD");
+                params.put("user", email);
                 return params;
             }
             @Override
