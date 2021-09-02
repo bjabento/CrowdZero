@@ -94,4 +94,61 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng ny = new LatLng(40.7143528, -74.0059731);
         gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
     }
+
+    //Centrar no user
+    private void centerOnMyLocation() {
+
+        map.setMyLocationEnabled(true);
+
+        location = map.getMyLocation();
+
+        if (location != null) {
+            myLocation = new LatLng(location.getLatitude(),
+                    location.getLongitude());
+        }
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
+                Constants.MAP_ZOOM));
+    }
+    //Range do ponto
+    Circle circle = map.addCircle(new CircleOptions()
+            .center(new LatLng(-33.87365, 151.20689))
+            .radius(10000)
+            .strokeColor(Color.RED)
+            .fillColor(Color.BLUE));
+
+
+    circle = new google.maps.Circle( {
+        map           : map,
+                center        : new google.maps.LatLng( 100, 20 ),
+                radius        : 2000,
+                strokeColor   : '#FF0099',
+                strokeOpacity : 1,
+                strokeWeight  : 2,
+                fillColor     : '#009ee0',
+                fillOpacity   : 0.2
+    } )
+
+            circle.getBounds().contains( new google.maps.LatLng( 101, 21 ) );
+
+
+    google.maps.geometry.spherical.computeDistanceBetween(
+            new google.maps.LatLng( 100, 20 ),
+            new google.maps.LatLng( 101, 21 )
+            ) <= 2000;
+
+    float[] distance = new float[2];
+
+//Location.distanceBetween(latLng.latitude, latLng.longitude, circle.getCenter().latitude,circle.getCenter().longitude,distance);
+//if ( distance[0] <= circle.getRadius())
+//    {
+        // Inside The Circle
+//    }
+//else
+//    {
+        // Outside The Circle
+//    }
+
+
+
+
 }
