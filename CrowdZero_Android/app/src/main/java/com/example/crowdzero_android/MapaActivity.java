@@ -1,19 +1,48 @@
 package com.example.crowdzero_android;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
+import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 
 public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback{
     private MapView mapView;
     private GoogleMap gmap;
+    private LocationRequest locationRequest;
+    private double lat, lon;
+    LocationManager lmanager;
+    LocationListener llistener;
+    LatLng ny;
+    Location loc;
+
 
     private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyA9tbVF3v7p0wYLhoRkcYdKuTLr5KREXr4";
 
@@ -40,7 +69,45 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);
-        mapView.getMapAsync( this);
+        mapView.getMapAsync(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(MapaActivity.this, "Tenho permissão", Toast.LENGTH_SHORT).show();
+                if (gpsen()){
+                    LocationServices.getFusedLocationProviderClient(MapaActivity.this)
+                            .requestLocationUpdates(locationRequest, new LocationCallback() {
+                                @Override
+                                public void onLocationResult(@NonNull LocationResult locationResult) {
+                                    super.onLocationResult(locationResult);
+
+                                    if (locationResult != null && locationResult.getLocations().size() >0){
+                                        int index = locationResult.getLocations().size()-1;
+                                        lat = locationResult.getLocations().get(index).getLatitude();
+                                        lon = locationResult.getLocations().get(index).getLongitude();
+                                    }
+                                }
+                            }, Looper.getMainLooper());
+                }else {
+                    Toast.makeText(MapaActivity.this, "Para utilizar esta funcionalidade tem de ter o GPS ativo", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else{
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+        }
+    }
+
+    private boolean gpsen(){
+        LocationManager locationManager = null;
+        boolean isEnabled = false;
+
+        if (locationManager == null){
+            locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        }
+
+        isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        return isEnabled;
     }
 
     @Override
@@ -55,6 +122,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mapView.onSaveInstanceState(mapViewBundle);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -72,45 +140,49 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onStop();
         mapView.onStop();
     }
+
     @Override
     protected void onPause() {
         mapView.onPause();
         super.onPause();
     }
+
     @Override
     protected void onDestroy() {
         mapView.onDestroy();
         super.onDestroy();
     }
+
     @Override
     public void onLowMemory() {
         super.onLowMemory();
         mapView.onLowMemory();
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        //gmap.setMinZoomPreference(12);
+        //LatLng ny;
+        //ny = new LatLng(40.7143528, -74.0059731);
+        Circle circle;
         gmap = googleMap;
-        gmap.setMinZoomPreference(12);
-        LatLng ny = new LatLng(40.7143528, -74.0059731);
-        gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
-    }
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            gmap.setMyLocationEnabled(true);
+            ny = new LatLng(lat, lon);
 
-    //Centrar no user
-    private void centerOnMyLocation() {
-
-        map.setMyLocationEnabled(true);
-
-        location = map.getMyLocation();
-
-        if (location != null) {
-            myLocation = new LatLng(location.getLatitude(),
-                    location.getLongitude());
+            circle = gmap.addCircle(new CircleOptions()
+                    .center(new LatLng(lat, lon))
+                    .radius(10000)
+                    .strokeColor(Color.RED));
+            gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+        } else {
+            finish();
         }
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
-                Constants.MAP_ZOOM));
     }
+
+
     //Range do ponto
-    Circle circle = map.addCircle(new CircleOptions()
+    /*Circle circle = map.addCircle(new CircleOptions()
             .center(new LatLng(-33.87365, 151.20689))
             .radius(10000)
             .strokeColor(Color.RED)
@@ -146,7 +218,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 //else
 //    {
         // Outside The Circle
-//    }
+//    }*/
 
 
 

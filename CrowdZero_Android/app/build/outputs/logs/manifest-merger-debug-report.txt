@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
 MERGED from [androidx.databinding:viewbinding:4.2.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\947a71c6d3280253a2aa382ca3d9c53f\jetified-viewbinding-4.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\68198ebcb2b6bd749eec9f9577ee98d7\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2730d74d200c17936a122ce975a9aa70\material-1.3.0\AndroidManifest.xml:17:1-24:12
@@ -11,6 +11,7 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\gonca\.g
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\f9db3af1d4b21c0f8eaed47c1558f861\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\43255a1a0e51dcfaafd6d662da78544e\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-location:18.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\68ef4d7212ab2707bebee106d7f8d679\jetified-play-services-location-18.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:17:1-44:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2ab9f694e5d3af64949140461960b743\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-fragment:2.3.5] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\23afb4882a0aa2885b76d387b23f3bae\navigation-fragment-2.3.5\AndroidManifest.xml:17:1-24:12
@@ -19,12 +20,13 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\gonca\.gradle\
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\b9204796e7e567996b1d6e9b487b57da\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\09cd11ad24825c24b61e90edee582879\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7cbfbaaa39ecb82620bffe2588206993\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\4c023e84682f7797dbf09716cc63be86\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\f7846fe8ad06377ccd04fc9edfab5db2\jetified-play-services-auth-api-phone-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\e8591d04c612a36639b6f49984076a6e\jetified-play-services-auth-base-17.0.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7eaa4ca57ca5396566d1c00f56b8e077\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:17:1-28:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\4c023e84682f7797dbf09716cc63be86\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2cd52bd2f02f6e7853d11f8ee13216ee\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\beb1f07cce7ad5c6098ddaf47f69e544\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\931139fa1313e5836ea5cfa0b8a0e30a\fragment-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\fb1a0924cbad762d0f581f6d187fd952\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\eb1af8f1493225341620214c24755800\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -57,20 +59,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\gonca\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\194f0a18b2b3f1b16744a232ed855690\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\e07e114cb47d0c60a85ca2367f8a128b\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\8d11d86b037c681c007c37e744e988c0\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:2:11-69
@@ -84,14 +86,18 @@ MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.g
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\43255a1a0e51dcfaafd6d662da78544e\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\43255a1a0e51dcfaafd6d662da78544e\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-location:18.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\68ef4d7212ab2707bebee106d7f8d679\jetified-play-services-location-18.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:18.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\68ef4d7212ab2707bebee106d7f8d679\jetified-play-services-location-18.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:36:5-42:19
-MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7eaa4ca57ca5396566d1c00f56b8e077\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7eaa4ca57ca5396566d1c00f56b8e077\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2cd52bd2f02f6e7853d11f8ee13216ee\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2cd52bd2f02f6e7853d11f8ee13216ee\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\beb1f07cce7ad5c6098ddaf47f69e544\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\beb1f07cce7ad5c6098ddaf47f69e544\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.3.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\aed2d48291dbe4779678b4bb5ca34b78\core-1.3.1\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\aed2d48291dbe4779678b4bb5ca34b78\core-1.3.1\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\ee32a41b299ebcf4e78d691344f52243\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -175,15 +181,19 @@ ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\Crowd
 	android:anyDensity
 		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:36:9-34
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:41:5-79
+ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:42:5-79
 	android:name
-		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:41:22-76
+		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:42:22-76
+uses-permission#android.permission. ACCESS_COARSE_LOCATION
+ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:43:5-82
+	android:name
+		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:43:22-79
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:43:5-67
+ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:44:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:43:22-64
+		ADDED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml:44:22-64
 uses-sdk
 INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\gonca\OneDrive\Ambiente de Trabalho\Uni\PINT\CrowdZero\CrowdZero_Android\app\src\main\AndroidManifest.xml
@@ -202,6 +212,8 @@ MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.g
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2e422312ce22730c0c9002d89be0123e\jetified-play-services-auth-19.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\43255a1a0e51dcfaafd6d662da78544e\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\43255a1a0e51dcfaafd6d662da78544e\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [com.google.android.gms:play-services-location:18.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\68ef4d7212ab2707bebee106d7f8d679\jetified-play-services-location-18.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:18.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\68ef4d7212ab2707bebee106d7f8d679\jetified-play-services-location-18.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2ab9f694e5d3af64949140461960b743\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
@@ -218,18 +230,20 @@ MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\gonca\.g
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\09cd11ad24825c24b61e90edee582879\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7cbfbaaa39ecb82620bffe2588206993\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7cbfbaaa39ecb82620bffe2588206993\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\4c023e84682f7797dbf09716cc63be86\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\4c023e84682f7797dbf09716cc63be86\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\f7846fe8ad06377ccd04fc9edfab5db2\jetified-play-services-auth-api-phone-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\f7846fe8ad06377ccd04fc9edfab5db2\jetified-play-services-auth-api-phone-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\e8591d04c612a36639b6f49984076a6e\jetified-play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\e8591d04c612a36639b6f49984076a6e\jetified-play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7eaa4ca57ca5396566d1c00f56b8e077\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\7eaa4ca57ca5396566d1c00f56b8e077\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\4c023e84682f7797dbf09716cc63be86\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\4c023e84682f7797dbf09716cc63be86\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2cd52bd2f02f6e7853d11f8ee13216ee\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\2cd52bd2f02f6e7853d11f8ee13216ee\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\beb1f07cce7ad5c6098ddaf47f69e544\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\beb1f07cce7ad5c6098ddaf47f69e544\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\931139fa1313e5836ea5cfa0b8a0e30a\fragment-1.2.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\931139fa1313e5836ea5cfa0b8a0e30a\fragment-1.2.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\fb1a0924cbad762d0f581f6d187fd952\loader-1.0.0\AndroidManifest.xml:20:5-44
@@ -347,16 +361,16 @@ ADDED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gr
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:17.0.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\jetified-play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c1a896b11dfbe51a2e6bc43569f255b9\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\a43c63ec2e58beede2837c1114ff3107\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:17.5.0] C:\Users\gonca\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
