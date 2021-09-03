@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -51,6 +52,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -60,14 +62,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
     private GoogleMap gmap;
     private LocationRequest locationRequest;
     private double lat, lon;
+    private int idlR;
+    LatLng loc;
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationManager lmanager;
     LocationListener llistener;
@@ -165,8 +171,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         }
-
-
     }
 
     @Override
@@ -283,6 +287,9 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     Location location = task.getResult();
                                     Log.d("latitude", Double.toString(location.getLatitude()));
                                     Log.d("longitude", Double.toString(location.getLongitude()));
+
+                                    loc = new LatLng(location.getLatitude(),location.getLongitude());
+                                    Toast.makeText(MapaActivity.this, loc.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                         } else {
@@ -333,13 +340,109 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void report() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                //Location loc = LocationServices.FusedLocationApi.getLastLocation(google);
-            } else {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://crowdzeromapi.herokuapp.com/locals";
+        getCurrentLocation();
+
+        Location startPoint = new Location("locationA");
+        startPoint.setLatitude(loc.latitude);
+        startPoint.setLongitude(loc.longitude);
+
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("message", response);
+
+                try {
+                    JSONObject newData = new JSONObject(response);
+                    JSONArray dataArray = newData.getJSONArray("locals");
+                    for (int i = 0; i < dataArray.length(); i++) {
+                        int idl = (Integer) dataArray.getJSONObject(i).get("idl");
+                        String nome = (String) dataArray.getJSONObject(i).get("nome");
+                        String lat = (String) dataArray.getJSONObject(i).get("latitude");
+                        String lon = (String) dataArray.getJSONObject(i).get("longitude");
+                        Log.d("idlMESSAGE", Integer.toString(idl));
+
+                        Location endPoint = new Location("locationB");
+                        endPoint.setLatitude(Double.valueOf(lat));
+                        endPoint.setLongitude(Double.valueOf(lon));
+
+                        double distance = startPoint.distanceTo(endPoint);
+                        Log.d("distance", Double.toString(distance));
+
+                        if (distance <= 200) {
+                            idlR = idl;
+                        } else {
+                            Toast.makeText(MapaActivity.this, "Não se encontra perto de um ponto", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
-        }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("fail", error.toString());
+                //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
+            }
+        });
+        queue.add(stringRequest1);
+
+        /*String url2 ="https://crowdzeromapi.herokuapp.com/insertReport";
+        RequestQueue queue2 = Volley.newRequestQueue(this);
+
+        StringRequest sr = new StringRequest(Request.Method.POST, url2,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            if (!response.equals("[]")){
+                                /*String[] sep = response.split(":");
+                                rIdu = sep[1].split(",");
+                                rCargo = sep[2].split(",");
+                                rNome = sep[3].split(",");
+                                rEmail = sep[5].split(",");
+                                rPass = sep[6].split(",");
+                                rPass[0] = rPass[0].replace("\"", "");
+
+                                if (rPass[0].equals(password)){
+                                    Log.e("HttpClient", "success! response: " + response.toString());
+                                    session.setId(rIdu[0] = rIdu[0].replace("\"", ""));
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this, "Credenciais incorretas", Toast.LENGTH_SHORT).show();
+                                }
+                               /* Toast.makeText(LoginActivity.this, sep[6].toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, rPass[0].toString(), Toast.LENGTH_SHORT).show();*/
+    /*}
+                        }catch(Error error) {
+                            Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("HttpClient", "error: " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("user", email);
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type","application/x-www-form-urlencoded");
+                return params;
+            }
+        };
+        queue.add(sr);*/
     }
 
     private void getCurrentLocation(){
@@ -415,30 +518,4 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         return isEnabled;
     }
-
-    /*public void getLocation() {
-        LocationRequest locationRequest = new LocationRequest();
-        locationRequest.setInterval(1000);
-        locationRequest.setFastestInterval(1000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        LocationServices.getFusedLocationProviderClient(MapaActivity.this)
-                .requestLocationUpdates(locationRequest, new LocationCallback() {
-                    @Override
-                    public void onLocationResult(LocationResult locationResult) {
-                        super.onLocationResult(locationResult);
-                        LocationServices.getFusedLocationProviderClient(MapaActivity.this)
-                                .removeLocationUpdates(this);
-                        if (locationResult != null && locationResult.getLocations().size() > 0){
-                            int lastestLocationIndex = locationResult.getLocations().size() - 1;
-                            Double latitude = locationResult.getLocations().get(lastestLocationIndex).getLatitude();
-                            Double longitude = locationResult.getLocations().get(lastestLocationIndex).getLongitude();
-                        }
-                    }
-                }), Looper.getMainLooper();
-
-    }*/
 }

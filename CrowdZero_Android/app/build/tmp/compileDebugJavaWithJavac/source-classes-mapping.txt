@@ -51,6 +51,8 @@ com/example/crowdzero_android/databinding/ActivityMainBinding.java
 com/example/crowdzero_android/MapaActivity.java
  com.example.crowdzero_android.MapaActivity
  com.example.crowdzero_android.MapaActivity$1
+ com.example.crowdzero_android.MapaActivity$10
+ com.example.crowdzero_android.MapaActivity$11
  com.example.crowdzero_android.MapaActivity$2
  com.example.crowdzero_android.MapaActivity$3
  com.example.crowdzero_android.MapaActivity$4
