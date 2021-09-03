@@ -17,9 +17,16 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -32,6 +39,13 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback{
     private MapView mapView;
@@ -161,49 +175,68 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        //gmap.setMinZoomPreference(12);
-        //LatLng ny;
-        //ny = new LatLng(40.7143528, -74.0059731);
-        Circle circle;
         gmap = googleMap;
+        Circle circle;
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://crowdzeromapi.herokuapp.com/reports";
+
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             gmap.setMyLocationEnabled(true);
-            ny = new LatLng(lat, lon);
+
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d("message", response);
+
+                    try {
+                        JSONArray jsonArr = new JSONArray(response);
+                        for (int i = 0; i < jsonArr.length(); i++)
+                        {
+                            try {
+                                JSONObject jsonObj = (JSONObject) jsonArr.get(i);
+                                try {
+                                    String value = jsonObj.getString("idr");
+                                    Toast.makeText(MapaActivity.this, value.toString(), Toast.LENGTH_LONG).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                System.out.println(jsonObj);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("fail" , error.toString());
+                    //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
+                }
+            });
+            queue.add(stringRequest);
+
+           /* ny = new LatLng(lat, lon);
 
             circle = gmap.addCircle(new CircleOptions()
                     .center(new LatLng(lat, lon))
                     .radius(10000)
                     .strokeColor(Color.RED));
-            gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+            gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));*/
         } else {
             finish();
         }
+        //gmap.setMinZoomPreference(12);
+        //LatLng ny;
+        //ny = new LatLng(40.7143528, -74.0059731);
     }
 
-
-    //Range do ponto
-    /*Circle circle = map.addCircle(new CircleOptions()
-            .center(new LatLng(-33.87365, 151.20689))
-            .radius(10000)
-            .strokeColor(Color.RED)
-            .fillColor(Color.BLUE));
+    //circle.getBounds().contains( new google.maps.LatLng( 101, 21 ) );
 
 
-    circle = new google.maps.Circle( {
-        map           : map,
-                center        : new google.maps.LatLng( 100, 20 ),
-                radius        : 2000,
-                strokeColor   : '#FF0099',
-                strokeOpacity : 1,
-                strokeWeight  : 2,
-                fillColor     : '#009ee0',
-                fillOpacity   : 0.2
-    } )
-
-            circle.getBounds().contains( new google.maps.LatLng( 101, 21 ) );
-
-
-    google.maps.geometry.spherical.computeDistanceBetween(
+    /*google.maps.geometry.spherical.computeDistanceBetween(
             new google.maps.LatLng( 100, 20 ),
             new google.maps.LatLng( 101, 21 )
             ) <= 2000;

@@ -1,6 +1,7 @@
 package com.example.crowdzero_android;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Session session;
     private String[] rCargo, rNome;
     ImageView c1, c2, c3;
-    Button bMap;
+    Button bMap, bLogo;
     TextView tUser, tCargo;
 
     @Override
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         bMap = findViewById(R.id.btnMapa);
         tUser = findViewById(R.id.txtUsername);
         tCargo = findViewById(R.id.txtCargo);
+        bLogo = findViewById(R.id.btnLogout);
 
         /*RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://crowdzeromapi.herokuapp.com/user";
@@ -150,6 +152,17 @@ public class MainActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.btnMapa:
                         openMapa();
+                        break;
+                }
+            }
+        });
+
+        bLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnLogout:
+                        finish();
                         break;
                 }
             }
