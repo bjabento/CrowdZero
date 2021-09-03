@@ -81,7 +81,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     LatLng TamWorth = new LatLng(-31.083332, 150.916672);
     LatLng NewCastle = new LatLng(-32.916668, 151.750000);
 
-
     private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyA9tbVF3v7p0wYLhoRkcYdKuTLr5KREXr4";
 
     private ArrayList<LatLng> locationArrayList;
