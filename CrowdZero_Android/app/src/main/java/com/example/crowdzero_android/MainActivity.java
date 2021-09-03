@@ -79,11 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
                                 tUser.setText(rNome[0] = rNome[0].replace("\"", ""));
                                 rCargo[0] = rCargo[0].replace("\"", "");
-                                if (Integer.parseInt(rCargo[0]) <= 10){
+                                if (Integer.parseInt(rCargo[0]) <= 50){
                                     tCargo.setText("Cidadão");
-                                } else if (Integer.parseInt(rCargo[0]) > 10 && Integer.parseInt(rCargo[0]) <= 20) {
+                                } else if (Integer.parseInt(rCargo[0]) > 50 && Integer.parseInt(rCargo[0]) <= 200) {
                                     tCargo.setText("Agente Sanitário");
-                                } else if (Integer.parseInt(rCargo[0]) > 20) {
+                                } else if (Integer.parseInt(rCargo[0]) > 200) {
                                     tCargo.setText("Agente de Saúde");
                                 }
                             }

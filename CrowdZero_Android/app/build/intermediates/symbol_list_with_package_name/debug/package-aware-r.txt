@@ -1907,6 +1907,7 @@ id btnBack
 id btnContactos
 id btnLogin
 id btnLoginG
+id btnLogout
 id btnMapa
 id btnMapa2
 id btnMenu
@@ -2263,7 +2264,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id txtAddress
 id txtCC
 id txtCargo
 id txtContact

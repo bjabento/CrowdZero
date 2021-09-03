@@ -25,6 +25,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView btnContactos;
 
   @NonNull
+  public final Button btnLogout;
+
+  @NonNull
   public final Button btnMapa;
 
   @NonNull
@@ -58,12 +61,14 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView txtUsername;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnContactos,
-      @NonNull Button btnMapa, @NonNull Button btnMenu, @NonNull ImageView btnPerfil,
-      @NonNull ImageView btnPoints, @NonNull CardView cardView3, @NonNull CardView cardViewPerfil,
-      @NonNull CardView cardViewPontos, @NonNull ImageView imageView4,
-      @NonNull CardView menuUserBar, @NonNull TextView txtCargo, @NonNull TextView txtUsername) {
+      @NonNull Button btnLogout, @NonNull Button btnMapa, @NonNull Button btnMenu,
+      @NonNull ImageView btnPerfil, @NonNull ImageView btnPoints, @NonNull CardView cardView3,
+      @NonNull CardView cardViewPerfil, @NonNull CardView cardViewPontos,
+      @NonNull ImageView imageView4, @NonNull CardView menuUserBar, @NonNull TextView txtCargo,
+      @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnContactos = btnContactos;
+    this.btnLogout = btnLogout;
     this.btnMapa = btnMapa;
     this.btnMenu = btnMenu;
     this.btnPerfil = btnPerfil;
@@ -107,6 +112,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.btnContactos;
       ImageView btnContactos = rootView.findViewById(id);
       if (btnContactos == null) {
+        break missingId;
+      }
+
+      id = R.id.btnLogout;
+      Button btnLogout = rootView.findViewById(id);
+      if (btnLogout == null) {
         break missingId;
       }
 
@@ -176,9 +187,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, btnContactos, btnMapa, btnMenu,
-          btnPerfil, btnPoints, cardView3, cardViewPerfil, cardViewPontos, imageView4, menuUserBar,
-          txtCargo, txtUsername);
+      return new ActivityMainBinding((ConstraintLayout) rootView, btnContactos, btnLogout, btnMapa,
+          btnMenu, btnPerfil, btnPoints, cardView3, cardViewPerfil, cardViewPontos, imageView4,
+          menuUserBar, txtCargo, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

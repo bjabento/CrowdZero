@@ -36,9 +36,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,18 +49,21 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback{
+public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
     private GoogleMap gmap;
     private LocationRequest locationRequest;
     private double lat, lon;
     LocationManager lmanager;
     LocationListener llistener;
-    LatLng ny;
-    Location loc;
+    LatLng sydney = new LatLng(-34, 151);
+    LatLng TamWorth = new LatLng(-31.083332, 150.916672);
+    LatLng NewCastle = new LatLng(-32.916668, 151.750000);
 
 
     private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyA9tbVF3v7p0wYLhoRkcYdKuTLr5KREXr4";
+
+    private ArrayList<LatLng> locationArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,43 +86,59 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        findViewById(R.id.btnSubmeter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnSubmeter:
+                        report();
+                        break;
+                }
+            }
+        });
+
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync(this);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(MapaActivity.this, "Tenho permissão", Toast.LENGTH_SHORT).show();
-                if (gpsen()){
+        locationArrayList = new ArrayList<>();
+
+        locationArrayList.add(sydney);
+        locationArrayList.add(TamWorth);
+        locationArrayList.add(NewCastle);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                //Toast.makeText(MapaActivity.this, "Tenho permissão", Toast.LENGTH_SHORT).show();
+                if (gpsen()) {
                     LocationServices.getFusedLocationProviderClient(MapaActivity.this)
                             .requestLocationUpdates(locationRequest, new LocationCallback() {
                                 @Override
                                 public void onLocationResult(@NonNull LocationResult locationResult) {
                                     super.onLocationResult(locationResult);
 
-                                    if (locationResult != null && locationResult.getLocations().size() >0){
-                                        int index = locationResult.getLocations().size()-1;
+                                    if (locationResult != null && locationResult.getLocations().size() > 0) {
+                                        int index = locationResult.getLocations().size() - 1;
                                         lat = locationResult.getLocations().get(index).getLatitude();
                                         lon = locationResult.getLocations().get(index).getLongitude();
                                     }
                                 }
                             }, Looper.getMainLooper());
-                }else {
+                } else {
                     Toast.makeText(MapaActivity.this, "Para utilizar esta funcionalidade tem de ter o GPS ativo", Toast.LENGTH_SHORT).show();
                 }
-            }
-            else{
+            } else {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
         }
     }
 
-    private boolean gpsen(){
+    private boolean gpsen() {
         LocationManager locationManager = null;
         boolean isEnabled = false;
 
-        if (locationManager == null){
-            locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager == null) {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         }
 
         isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -176,34 +197,34 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gmap = googleMap;
-        Circle circle;
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://crowdzeromapi.herokuapp.com/reports";
+        String url1 = "https://crowdzeromapi.herokuapp.com/locals";
+        String url2 = "https://crowdzeromapi.herokuapp.com/reports";
 
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             gmap.setMyLocationEnabled(true);
 
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            StringRequest stringRequest1 = new StringRequest(Request.Method.GET, url1, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     Log.d("message", response);
 
                     try {
-                        JSONArray jsonArr = new JSONArray(response);
-                        for (int i = 0; i < jsonArr.length(); i++)
-                        {
-                            try {
-                                JSONObject jsonObj = (JSONObject) jsonArr.get(i);
-                                try {
-                                    String value = jsonObj.getString("idr");
-                                    Toast.makeText(MapaActivity.this, value.toString(), Toast.LENGTH_LONG).show();
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                System.out.println(jsonObj);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                        JSONObject newData = new JSONObject(response);
+                        JSONArray dataArray = newData.getJSONArray("locals");
+                        for (int i = 0; i < dataArray.length(); i++) {
+                            int idl = (Integer) dataArray.getJSONObject(i).get("idl");
+                            String nome = (String) dataArray.getJSONObject(i).get("nome");
+                            String lat = (String) dataArray.getJSONObject(i).get("latitude");
+                            String lon = (String) dataArray.getJSONObject(i).get("longitude");
+                            LatLng local = new LatLng(Double.valueOf(lat), Double.valueOf(lon));
+                            Log.d("idlMESSAGE", Integer.toString(idl));
+
+                            gmap.addMarker(new MarkerOptions().position(local).title(nome).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).snippet(String.valueOf(idl)));
+                            Circle circle = gmap.addCircle(new CircleOptions()
+                                    .center(local)
+                                    .radius(200)
+                                    .strokeColor(Color.BLUE));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -212,48 +233,50 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.d("fail" , error.toString());
+                    Log.d("fail", error.toString());
                     //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
                 }
             });
-            queue.add(stringRequest);
+            queue.add(stringRequest1);
 
-           /* ny = new LatLng(lat, lon);
+            StringRequest stringRequest2 = new StringRequest(Request.Method.GET, url2, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d("message", response);
 
-            circle = gmap.addCircle(new CircleOptions()
-                    .center(new LatLng(lat, lon))
-                    .radius(10000)
-                    .strokeColor(Color.RED));
-            gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));*/
+                    try {
+                        JSONObject newData = new JSONObject(response);
+                        JSONArray dataArray = newData.getJSONArray("reports");
+                        for (int i = 0; i < dataArray.length(); i++) {
+                            int idr = (Integer) dataArray.getJSONObject(i).get("idr");
+                            Log.d("idrMESSAGE", Integer.toString(idr));
+
+                            gmap.addMarker(new MarkerOptions().position(locationArrayList.get(i)).title(String.valueOf(idr)));
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("fail", error.toString());
+                    //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
+                }
+            });
+            queue.add(stringRequest2);
         } else {
             finish();
         }
-        //gmap.setMinZoomPreference(12);
-        //LatLng ny;
-        //ny = new LatLng(40.7143528, -74.0059731);
     }
 
-    //circle.getBounds().contains( new google.maps.LatLng( 101, 21 ) );
-
-
-    /*google.maps.geometry.spherical.computeDistanceBetween(
-            new google.maps.LatLng( 100, 20 ),
-            new google.maps.LatLng( 101, 21 )
-            ) <= 2000;
-
-    float[] distance = new float[2];
-
-//Location.distanceBetween(latLng.latitude, latLng.longitude, circle.getCenter().latitude,circle.getCenter().longitude,distance);
-//if ( distance[0] <= circle.getRadius())
-//    {
-        // Inside The Circle
-//    }
-//else
-//    {
-        // Outside The Circle
-//    }*/
-
-
-
-
+    public void report() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                //Location loc = LocationServices.FusedLocationApi.getLastLocation(google);
+            } else {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+        }
+    }
 }

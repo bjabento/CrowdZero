@@ -31,9 +31,6 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final CardView menuUserBar;
 
   @NonNull
-  public final TextInputLayout txtAddress;
-
-  @NonNull
   public final TextView txtCargo;
 
   @NonNull
@@ -52,8 +49,7 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final TextView txtUsername;
 
   private ActivityPerfilBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull ImageView imageView4, @NonNull CardView menuUserBar,
-      @NonNull TextInputLayout txtAddress, @NonNull TextView txtCargo,
+      @NonNull ImageView imageView4, @NonNull CardView menuUserBar, @NonNull TextView txtCargo,
       @NonNull TextInputLayout txtContact, @NonNull TextInputLayout txtEmail,
       @NonNull TextInputLayout txtName, @NonNull TextInputLayout txtPassword,
       @NonNull TextView txtUsername) {
@@ -61,7 +57,6 @@ public final class ActivityPerfilBinding implements ViewBinding {
     this.btnBack = btnBack;
     this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
-    this.txtAddress = txtAddress;
     this.txtCargo = txtCargo;
     this.txtContact = txtContact;
     this.txtEmail = txtEmail;
@@ -115,12 +110,6 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtAddress;
-      TextInputLayout txtAddress = rootView.findViewById(id);
-      if (txtAddress == null) {
-        break missingId;
-      }
-
       id = R.id.txtCargo;
       TextView txtCargo = rootView.findViewById(id);
       if (txtCargo == null) {
@@ -158,8 +147,7 @@ public final class ActivityPerfilBinding implements ViewBinding {
       }
 
       return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, imageView4,
-          menuUserBar, txtAddress, txtCargo, txtContact, txtEmail, txtName, txtPassword,
-          txtUsername);
+          menuUserBar, txtCargo, txtContact, txtEmail, txtName, txtPassword, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
