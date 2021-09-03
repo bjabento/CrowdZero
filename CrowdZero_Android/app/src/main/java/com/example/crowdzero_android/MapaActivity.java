@@ -1,14 +1,18 @@
 package com.example.crowdzero_android;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -27,11 +31,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -41,6 +50,8 @@ import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -133,6 +144,39 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 1){
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
+                if (isGPSEnabled()) {
+
+                    getCurrentLocation();
+
+                }else {
+
+                    turnOnGPS();
+                }
+            }
+        }
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK) {
+
+                getCurrentLocation();
+            }
+        }
+    }
+
     private boolean gpsen() {
         LocationManager locationManager = null;
         boolean isEnabled = false;
@@ -220,6 +264,8 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                             LatLng local = new LatLng(Double.valueOf(lat), Double.valueOf(lon));
                             Log.d("idlMESSAGE", Integer.toString(idl));
 
+                            getCurrentLocation();
+
                             gmap.addMarker(new MarkerOptions().position(local).title(nome).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).snippet(String.valueOf(idl)));
                             Circle circle = gmap.addCircle(new CircleOptions()
                                     .center(local)
@@ -279,4 +325,104 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
     }
+
+    private void getCurrentLocation(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if(ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+                if(isGPSEnabled()){
+                    LocationServices.getFusedLocationProviderClient(MapaActivity.this).requestLocationUpdates(locationRequest, new LocationCallback() {
+                        @Override
+                        public void onLocationResult(@NonNull LocationResult locationResult){
+                            super.onLocationResult(locationResult);
+
+                            LocationServices.getFusedLocationProviderClient(MapaActivity.this).removeLocationUpdates(this);
+
+                            if(locationResult != null && locationResult.getLocations().size() > 0){
+
+                                int index = locationResult.getLocations().size() - 1;
+                                double latitude = locationResult.getLocations().get(index).getLatitude();
+                                double longitude = locationResult.getLocations().get(index).getLongitude();
+
+                                Log.d("Latitude", Double.toString(latitude));
+                                Log.d("Longitude", Double.toString(longitude));
+                            }
+                        }
+                    }, Looper.getMainLooper());
+                } else {
+                    turnOnGPS();
+                }
+            } else {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+        }
+    }
+
+    private void turnOnGPS() {
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
+        builder.setAlwaysShow(true);
+
+        Task<LocationSettingsResponse> result = LocationServices.getSettingsClient(getApplicationContext()).checkLocationSettings(builder.build());
+        result.addOnCompleteListener(new OnCompleteListener<LocationSettingsResponse>() {
+            @Override
+            public void onComplete(@NonNull Task<LocationSettingsResponse> task) {
+                try{
+                    LocationSettingsResponse response = task.getResult(ApiException.class);
+                    Toast.makeText(MapaActivity.this, "GPS ta a andar", Toast.LENGTH_SHORT).show();
+
+                }catch(ApiException e){
+                    switch(e.getStatusCode()){
+                        case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
+                            try{
+                                ResolvableApiException resolvableApiException = (ResolvableApiException) e;
+                                resolvableApiException.startResolutionForResult(MapaActivity.this, 2);
+                            }catch(IntentSender.SendIntentException ex){
+                                ex.printStackTrace();
+                            }
+                            break;
+                        case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                            Log.d("ITS OVER...", "Bros...");
+                            break;
+                    }
+                }
+            }
+        });
+
+    }
+    private boolean isGPSEnabled(){
+        LocationManager locationManager = null;
+        boolean isEnabled = false;
+
+        if(locationManager == null){
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        }
+
+        isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        return isEnabled;
+    }
+
+    /*public void getLocation() {
+        LocationRequest locationRequest = new LocationRequest();
+        locationRequest.setInterval(1000);
+        locationRequest.setFastestInterval(1000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        LocationServices.getFusedLocationProviderClient(MapaActivity.this)
+                .requestLocationUpdates(locationRequest, new LocationCallback() {
+                    @Override
+                    public void onLocationResult(LocationResult locationResult) {
+                        super.onLocationResult(locationResult);
+                        LocationServices.getFusedLocationProviderClient(MapaActivity.this)
+                                .removeLocationUpdates(this);
+                        if (locationResult != null && locationResult.getLocations().size() > 0){
+                            int lastestLocationIndex = locationResult.getLocations().size() - 1;
+                            Double latitude = locationResult.getLocations().get(lastestLocationIndex).getLatitude();
+                            Double longitude = locationResult.getLocations().get(lastestLocationIndex).getLongitude();
+                        }
+                    }
+                }), Looper.getMainLooper();
+
+    }*/
 }
