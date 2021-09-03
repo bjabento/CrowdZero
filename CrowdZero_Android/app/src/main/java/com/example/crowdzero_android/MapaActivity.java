@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -34,6 +35,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResolvableApiException;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
@@ -59,12 +61,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
     private GoogleMap gmap;
     private LocationRequest locationRequest;
     private double lat, lon;
+    FusedLocationProviderClient fusedLocationProviderClient;
     LocationManager lmanager;
     LocationListener llistener;
     LatLng sydney = new LatLng(-34, 151);
@@ -148,14 +152,14 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == 1){
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                 if (isGPSEnabled()) {
 
                     getCurrentLocation();
 
-                }else {
+                } else {
 
                     turnOnGPS();
                 }
@@ -264,13 +268,25 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                             LatLng local = new LatLng(Double.valueOf(lat), Double.valueOf(lon));
                             Log.d("idlMESSAGE", Integer.toString(idl));
 
-                            getCurrentLocation();
 
                             gmap.addMarker(new MarkerOptions().position(local).title(nome).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).snippet(String.valueOf(idl)));
                             Circle circle = gmap.addCircle(new CircleOptions()
                                     .center(local)
                                     .radius(200)
                                     .strokeColor(Color.BLUE));
+                        }
+                        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapaActivity.this);
+                        if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Location> task) {
+                                    Location location = task.getResult();
+                                    Log.d("latitude", Double.toString(location.getLatitude()));
+                                    Log.d("longitude", Double.toString(location.getLongitude()));
+                                }
+                            });
+                        } else {
+                            ActivityCompat.requestPermissions(MapaActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
