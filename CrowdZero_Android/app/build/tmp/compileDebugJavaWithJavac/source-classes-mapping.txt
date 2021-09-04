@@ -53,6 +53,9 @@ com/example/crowdzero_android/MapaActivity.java
  com.example.crowdzero_android.MapaActivity$1
  com.example.crowdzero_android.MapaActivity$10
  com.example.crowdzero_android.MapaActivity$11
+ com.example.crowdzero_android.MapaActivity$12
+ com.example.crowdzero_android.MapaActivity$13
+ com.example.crowdzero_android.MapaActivity$14
  com.example.crowdzero_android.MapaActivity$2
  com.example.crowdzero_android.MapaActivity$3
  com.example.crowdzero_android.MapaActivity$4

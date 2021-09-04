@@ -61,11 +61,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Date;
+import java.util.Calendar;
 
 public class MapaActivity extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
@@ -315,11 +318,14 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                     try {
                         JSONObject newData = new JSONObject(response);
                         JSONArray dataArray = newData.getJSONArray("reports");
-                        for (int i = 0; i < dataArray.length(); i++) {
+                        for (int i = 0; i <= dataArray.length(); i++) {
                             int idr = (Integer) dataArray.getJSONObject(i).get("idr");
+                            String lat = (String) dataArray.getJSONObject(i).get("latr");
+                            String lon = (String) dataArray.getJSONObject(i).get("longr");
                             Log.d("idrMESSAGE", Integer.toString(idr));
 
-                            gmap.addMarker(new MarkerOptions().position(locationArrayList.get(i)).title(String.valueOf(idr)));
+                            LatLng loc = new LatLng(Double.valueOf(lat),Double.valueOf(lon));
+                            gmap.addMarker(new MarkerOptions().position(loc).title(String.valueOf(idr)));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -388,8 +394,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
         queue.add(stringRequest1);
 
-        /*String url2 ="https://crowdzeromapi.herokuapp.com/insertReport";
-        RequestQueue queue2 = Volley.newRequestQueue(this);
+        String url2 ="https://crowdzeromapi.herokuapp.com/reportPost";
 
         StringRequest sr = new StringRequest(Request.Method.POST, url2,
                 new Response.Listener<String>() {
@@ -397,8 +402,8 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                     public void onResponse(String response) {
                         try {
                             if (!response.equals("[]")){
-                                /*String[] sep = response.split(":");
-                                rIdu = sep[1].split(",");
+                                String[] sep = response.split(":");
+                                /*rIdu = sep[1].split(",");
                                 rCargo = sep[2].split(",");
                                 rNome = sep[3].split(",");
                                 rEmail = sep[5].split(",");
@@ -416,7 +421,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                                 }
                                /* Toast.makeText(LoginActivity.this, sep[6].toString(), Toast.LENGTH_SHORT).show();
                                 Toast.makeText(LoginActivity.this, rPass[0].toString(), Toast.LENGTH_SHORT).show();*/
-    /*}
+                            }
                         }catch(Error error) {
                             Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                         }
@@ -431,7 +436,12 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("user", email);
+                params.put("idu", "1");
+                params.put("idl", "1");
+                params.put("latitude", "43");
+                params.put("longitude", "-7");
+                params.put("nivel", "3");
+                params.put("data", String.valueOf(LocalDateTime.now()));
                 return params;
             }
             @Override
@@ -441,7 +451,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return params;
             }
         };
-        queue.add(sr);*/
+        queue.add(sr);
     }
 
     private void getCurrentLocation(){
