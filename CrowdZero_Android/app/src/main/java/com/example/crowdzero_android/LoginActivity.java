@@ -36,9 +36,10 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "";
     SignInButton signInButton;
     private GoogleSignInClient mGoogleSignInClient;
+    GoogleSignInAccount account;
     private static final int SIGN_IN = 1;
     private int RC_SIGN_IN;
-    private String[] rIdu, rCargo, rNome, rEmail, rPass;
+    private String[] rIdu, rPass, rGoo;
     private Session session;
 
     @Override
@@ -76,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.btnReg:
                         startActivity(new Intent(LoginActivity.this, RegistarActivity.class));
+                        finish();
                         break;
                 }
             }
@@ -107,10 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (!response.equals("[]")){
                                 String[] sep = response.split(":");
                                 rIdu = sep[1].split(",");
-                                rCargo = sep[2].split(",");
-                                rNome = sep[3].split(",");
-                                rEmail = sep[5].split(",");
-                                rPass = sep[6].split(",");
+                                rPass = sep[5].split(",");
                                 rPass[0] = rPass[0].replace("\"", "");
 
                                 if (rPass[0].equals(password)){
@@ -169,11 +168,104 @@ public class LoginActivity extends AppCompatActivity {
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
+            account = completedTask.getResult(ApiException.class);
+            loginG();
         } catch (ApiException e) {
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    private void loginG() {
+        String urlLogG ="https://crowdzeromapi.herokuapp.com/loginGoo";
+        RequestQueue queueLogG = Volley.newRequestQueue(this);
+
+        StringRequest sr = new StringRequest(Request.Method.POST, urlLogG,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            if (!response.equals("[]")){
+                                String[] sep = response.split(":");
+                                rIdu = sep[1].split(",");
+
+                                Log.e("HttpClient", "success! response: " + response.toString());
+                                session.setId(rIdu[0] = rIdu[0].replace("\"", ""));
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            }
+                            else {
+                                regG();
+                            }
+                        }catch(Error error) {
+                            Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("HttpClient", "error: " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("google", account.getId().toString());
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type","application/x-www-form-urlencoded");
+                return params;
+            }
+        };
+        queueLogG.add(sr);
+    }
+
+    private void regG(){
+        Toast.makeText(LoginActivity.this, "Entrei", Toast.LENGTH_SHORT).show();
+        String urlRegG ="https://crowdzeromapi.herokuapp.com/registarGoo";
+        RequestQueue queueRegG = Volley.newRequestQueue(this);
+
+        StringRequest reqRegistG = new StringRequest(Request.Method.POST, urlRegG,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            if (!response.equals("Success")){
+
+                            }
+                            else{
+
+                            }
+                        }catch(Error error) {
+                            Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("HttpClient", "error: " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("car", "0");
+                params.put("nom", account.getDisplayName().toString());
+                params.put("ema", account.getEmail().toString());
+                params.put("idg", account.getId().toString());
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type","application/x-www-form-urlencoded");
+                return params;
+            }
+        };
+        queueRegG.add(reqRegistG);
     }
 }

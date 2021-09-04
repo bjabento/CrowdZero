@@ -112,12 +112,46 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        findViewById(R.id.btnPop1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnPop1:
+                        nivel = 1;
+                        Toast.makeText(MapaActivity.this, "cheguei aqui", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+        findViewById(R.id.btnPop2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnPop2:
+                        nivel = 2;
+                        Toast.makeText(MapaActivity.this, "cheguei aqui", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+        findViewById(R.id.btnPop3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btnPop3:
+                        nivel = 3;
+                        Toast.makeText(MapaActivity.this, "cheguei aqui", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+
         findViewById(R.id.btnSubmeter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btnSubmeter:
-                        report();
+                        verifReport();
                         break;
                 }
             }
@@ -344,11 +378,11 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         gmap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-
                 idF = marker.getTitle();
 
+                Toast.makeText(MapaActivity.this, session.getId().toString() + ";" + idF.toString(), Toast.LENGTH_SHORT).show();
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(MapaActivity.this);
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(MapaActivity.this);
 
                 //Set title for AlertDialog
                 builder.setTitle("Dialog with 2 Buttons");
@@ -377,25 +411,24 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
                 AlertDialog dialog = builder.create();
-                dialog.show();
+                dialog.show();*/
                 feedb();
 
-                return true;
+                return false;
             }
         });
     }
 
-    public void report() {
+    public void verifReport(){
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://crowdzeromapi.herokuapp.com/locals";
-        String url2 ="https://crowdzeromapi.herokuapp.com/reportPost";
         getCurrentLocation();
 
         Location startPoint = new Location("locationA");
         startPoint.setLatitude(loc.latitude);
         startPoint.setLongitude(loc.longitude);
 
-        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("message", response);
@@ -415,12 +448,12 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                         endPoint.setLongitude(Double.valueOf(lon));
 
                         double distance = startPoint.distanceTo(endPoint);
-                        Log.d("distance", Double.toString(distance));
 
                         if (distance <= 200) {
                             idlR = idl;
+                            break;
                         } else {
-                            Toast.makeText(MapaActivity.this, "Não se encontra perto de um ponto", Toast.LENGTH_SHORT).show();
+                            idlR = 0;
                         }
                     }
                 } catch (JSONException e) {
@@ -434,53 +467,67 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
             }
         });
-        queue.add(stringRequest1);
+        queue.add(stringRequest);
 
-        StringRequest sr = new StringRequest(Request.Method.POST, url2,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            if (!response.equals("[]")){
-                                String[] sep = response.split(":");
+        Log.d("idlR", Double.toString(idlR));
+        if (idlR > 0){
+            Log.d("idlR", Double.toString(idlR));
+            report();
+        }
+        else{
+            Toast.makeText(MapaActivity.this, "Não se encontra perto de um ponto", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void report() {
+        RequestQueue queueRepo = Volley.newRequestQueue(this);
+        String urlRepo ="https://crowdzeromapi.herokuapp.com/reportPost";
+
+            StringRequest sr = new StringRequest(Request.Method.POST, urlRepo,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                if (!response.equals("[]")){
+                                    String[] sep = response.split(":");
+                                }
+                            }catch(Error error) {
+                                Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                             }
-                        }catch(Error error) {
-                            Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                         }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("HttpClient", "error: " + error.toString());
-            }
-        })
-        {
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("idu", String.valueOf(session.getId()));
-                params.put("idl", String.valueOf(idlR));
-                params.put("latitude", String.valueOf(loc.latitude));
-                params.put("longitude", String.valueOf(loc.longitude));
-                params.put("nivel", String.valueOf(nivel));
-                params.put("data", String.valueOf(LocalDateTime.now()));
-                return params;
-            }
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/x-www-form-urlencoded");
-                return params;
-            }
-        };
-        queue.add(sr);
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.e("HttpClient", "error: " + error.toString());
+                }
+            })
+            {
+                @Override
+                protected Map<String,String> getParams(){
+                    Map<String,String> params = new HashMap<String, String>();
+                    params.put("idu", String.valueOf(session.getId()));
+                    params.put("idl", String.valueOf(idlR));
+                    params.put("latitude", String.valueOf(loc.latitude));
+                    params.put("longitude", String.valueOf(loc.longitude));
+                    params.put("nivel", String.valueOf(nivel));
+                    params.put("data", String.valueOf(LocalDateTime.now()));
+                    return params;
+                }
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<String, String>();
+                    params.put("Content-Type","application/x-www-form-urlencoded");
+                    return params;
+                }
+            };
+        queueRepo.add(sr);
     }
 
     public void feedb(){
         RequestQueue queue = Volley.newRequestQueue(MapaActivity.this);
-        String url = "https://crowdzeromapi.herokuapp.com/feedbackPost";
+        String urlFdb = "https://crowdzeromapi.herokuapp.com/feedbackPost";
 
-        StringRequest sr = new StringRequest(Request.Method.POST, url,
+        StringRequest sr = new StringRequest(Request.Method.POST, urlFdb,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -589,19 +636,5 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         return isEnabled;
-    }
-
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnPop1:
-                    nivel = 1;
-                break;
-            case R.id.btnPop2:
-                    nivel = 2;
-                break;
-            case R.id.btnPop3:
-                    nivel = 3;
-                break;
-        }
     }
 }

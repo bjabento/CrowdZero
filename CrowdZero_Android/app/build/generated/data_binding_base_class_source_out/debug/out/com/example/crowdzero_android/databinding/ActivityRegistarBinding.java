@@ -24,39 +24,35 @@ public final class ActivityRegistarBinding implements ViewBinding {
   public final Button btnRegist;
 
   @NonNull
-  public final View divider;
-
-  @NonNull
   public final ImageView imageView;
 
   @NonNull
-  public final TextInputLayout txtCC;
+  public final TextInputLayout txtRegcc;
 
   @NonNull
-  public final TextInputLayout txtContacto;
+  public final TextInputLayout txtRegcontacto;
 
   @NonNull
-  public final TextInputLayout txtEmail;
+  public final TextInputLayout txtRegemail;
 
   @NonNull
-  public final TextInputLayout txtNAME;
+  public final TextInputLayout txtRegnome;
 
   @NonNull
-  public final TextInputLayout txtPassreg;
+  public final TextInputLayout txtRegpass;
 
   private ActivityRegistarBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnRegist,
-      @NonNull View divider, @NonNull ImageView imageView, @NonNull TextInputLayout txtCC,
-      @NonNull TextInputLayout txtContacto, @NonNull TextInputLayout txtEmail,
-      @NonNull TextInputLayout txtNAME, @NonNull TextInputLayout txtPassreg) {
+      @NonNull ImageView imageView, @NonNull TextInputLayout txtRegcc,
+      @NonNull TextInputLayout txtRegcontacto, @NonNull TextInputLayout txtRegemail,
+      @NonNull TextInputLayout txtRegnome, @NonNull TextInputLayout txtRegpass) {
     this.rootView = rootView;
     this.btnRegist = btnRegist;
-    this.divider = divider;
     this.imageView = imageView;
-    this.txtCC = txtCC;
-    this.txtContacto = txtContacto;
-    this.txtEmail = txtEmail;
-    this.txtNAME = txtNAME;
-    this.txtPassreg = txtPassreg;
+    this.txtRegcc = txtRegcc;
+    this.txtRegcontacto = txtRegcontacto;
+    this.txtRegemail = txtRegemail;
+    this.txtRegnome = txtRegnome;
+    this.txtRegpass = txtRegpass;
   }
 
   @Override
@@ -92,50 +88,44 @@ public final class ActivityRegistarBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.divider;
-      View divider = rootView.findViewById(id);
-      if (divider == null) {
-        break missingId;
-      }
-
       id = R.id.imageView;
       ImageView imageView = rootView.findViewById(id);
       if (imageView == null) {
         break missingId;
       }
 
-      id = R.id.txtCC;
-      TextInputLayout txtCC = rootView.findViewById(id);
-      if (txtCC == null) {
+      id = R.id.txtRegcc;
+      TextInputLayout txtRegcc = rootView.findViewById(id);
+      if (txtRegcc == null) {
         break missingId;
       }
 
-      id = R.id.txtContacto;
-      TextInputLayout txtContacto = rootView.findViewById(id);
-      if (txtContacto == null) {
+      id = R.id.txtRegcontacto;
+      TextInputLayout txtRegcontacto = rootView.findViewById(id);
+      if (txtRegcontacto == null) {
         break missingId;
       }
 
-      id = R.id.txtEmail;
-      TextInputLayout txtEmail = rootView.findViewById(id);
-      if (txtEmail == null) {
+      id = R.id.txtRegemail;
+      TextInputLayout txtRegemail = rootView.findViewById(id);
+      if (txtRegemail == null) {
         break missingId;
       }
 
-      id = R.id.txtNAME;
-      TextInputLayout txtNAME = rootView.findViewById(id);
-      if (txtNAME == null) {
+      id = R.id.txtRegnome;
+      TextInputLayout txtRegnome = rootView.findViewById(id);
+      if (txtRegnome == null) {
         break missingId;
       }
 
-      id = R.id.txtPassreg;
-      TextInputLayout txtPassreg = rootView.findViewById(id);
-      if (txtPassreg == null) {
+      id = R.id.txtRegpass;
+      TextInputLayout txtRegpass = rootView.findViewById(id);
+      if (txtRegpass == null) {
         break missingId;
       }
 
-      return new ActivityRegistarBinding((ConstraintLayout) rootView, btnRegist, divider, imageView,
-          txtCC, txtContacto, txtEmail, txtNAME, txtPassreg);
+      return new ActivityRegistarBinding((ConstraintLayout) rootView, btnRegist, imageView,
+          txtRegcc, txtRegcontacto, txtRegemail, txtRegnome, txtRegpass);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
