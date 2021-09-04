@@ -382,37 +382,10 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 Toast.makeText(MapaActivity.this, session.getId().toString() + ";" + idF.toString(), Toast.LENGTH_SHORT).show();
 
-                /*AlertDialog.Builder builder = new AlertDialog.Builder(MapaActivity.this);
+                Intent intent = new Intent(getApplicationContext(), SendFeedbackActivity.class);
+                intent.putExtra("message", idF);
 
-                //Set title for AlertDialog
-                builder.setTitle("Dialog with 2 Buttons");
-
-                //Set body message of Dialog
-                builder.setMessage("See Android tuts at DevExchanges.info");
-
-                //// Is dismiss when touching outside?
-                builder.setCancelable(true);
-
-                //Positive Button and it onClicked event listener
-                builder.setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                feedback = true;
-                            }
-                        });
-
-                //Negative Button
-                builder.setNegativeButton("No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                feedback = false;
-                            }
-                        });
-
-
-                AlertDialog dialog = builder.create();
-                dialog.show();*/
-                feedb();
+                startActivity(intent);
 
                 return false;
             }
@@ -521,10 +494,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             };
         queueRepo.add(sr);
-    }
-
-    public void feedb(){
-
     }
 
     private void getCurrentLocation(){

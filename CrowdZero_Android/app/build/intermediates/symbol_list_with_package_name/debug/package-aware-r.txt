@@ -1905,6 +1905,7 @@ id bottom
 id bounce
 id btnBack
 id btnContactos
+id btnF
 id btnLogin
 id btnLoginG
 id btnLogout
@@ -1920,6 +1921,7 @@ id btnPop3
 id btnReg
 id btnRegist
 id btnSubmeter
+id btnV
 id buttonPanel
 id button_first
 id button_second
@@ -2236,6 +2238,7 @@ id textStart
 id textTop
 id textView
 id textView2
+id textView3
 id textView4
 id text_input_end_icon
 id text_input_error_icon
@@ -2359,6 +2362,7 @@ layout activity_mapa
 layout activity_perfil
 layout activity_pontos
 layout activity_registar
+layout activity_send_feedback
 layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item
