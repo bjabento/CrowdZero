@@ -46,23 +46,6 @@ public class MainActivity extends AppCompatActivity {
         tCargo = findViewById(R.id.txtCargo);
         bLogo = findViewById(R.id.btnLogout);
 
-        /*RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://crowdzeromapi.herokuapp.com/user";
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("message", response);
-                //Toast.makeText(MainActivity.this, "Dota", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("fail" , error.toString());
-                //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
-            }
-        });
-        queue.add(stringRequest);*/
-
         String url ="https://crowdzeromapi.herokuapp.com/userData";
         RequestQueue queue = Volley.newRequestQueue(this);
 

@@ -524,44 +524,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void feedb(){
-        RequestQueue queue = Volley.newRequestQueue(MapaActivity.this);
-        String urlFdb = "https://crowdzeromapi.herokuapp.com/feedbackPost";
 
-        StringRequest sr = new StringRequest(Request.Method.POST, urlFdb,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            if (!response.equals("[]")){
-                                String[] sep = response.split(":");
-                            }
-                        }catch(Error error) {
-                            Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("HttpClient", "error: " + error.toString());
-            }
-        })
-        {
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("idu", session.getId().toString());
-                params.put("idr", idF.toString());
-                params.put("feedb", "true");
-                return params;
-            }
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/x-www-form-urlencoded");
-                return params;
-            }
-        };
-        queue.add(sr);
     }
 
     private void getCurrentLocation(){
