@@ -57,6 +57,9 @@ com/example/crowdzero_android/MapaActivity.java
  com.example.crowdzero_android.MapaActivity$13
  com.example.crowdzero_android.MapaActivity$14
  com.example.crowdzero_android.MapaActivity$15
+ com.example.crowdzero_android.MapaActivity$16
+ com.example.crowdzero_android.MapaActivity$17
+ com.example.crowdzero_android.MapaActivity$18
  com.example.crowdzero_android.MapaActivity$2
  com.example.crowdzero_android.MapaActivity$3
  com.example.crowdzero_android.MapaActivity$4
@@ -67,9 +70,6 @@ com/example/crowdzero_android/MapaActivity.java
  com.example.crowdzero_android.MapaActivity$8
  com.example.crowdzero_android.MapaActivity$8$1
  com.example.crowdzero_android.MapaActivity$8$2
- com.example.crowdzero_android.MapaActivity$8$3
- com.example.crowdzero_android.MapaActivity$8$4
- com.example.crowdzero_android.MapaActivity$8$5
  com.example.crowdzero_android.MapaActivity$9
 com/example/crowdzero_android/MainActivity.java
  com.example.crowdzero_android.MainActivity
