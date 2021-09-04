@@ -74,19 +74,16 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     private MapView mapView;
     private GoogleMap gmap;
     private LocationRequest locationRequest;
+    private Session session;
     private double lat, lon;
     private int idlR;
+    private int nivel;
     LatLng loc;
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationManager lmanager;
     LocationListener llistener;
-    LatLng sydney = new LatLng(-34, 151);
-    LatLng TamWorth = new LatLng(-31.083332, 150.916672);
-    LatLng NewCastle = new LatLng(-32.916668, 151.750000);
 
     private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyA9tbVF3v7p0wYLhoRkcYdKuTLr5KREXr4";
-
-    private ArrayList<LatLng> locationArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,12 +120,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync(this);
-
-        locationArrayList = new ArrayList<>();
-
-        locationArrayList.add(sydney);
-        locationArrayList.add(TamWorth);
-        locationArrayList.add(NewCastle);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -318,7 +309,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                     try {
                         JSONObject newData = new JSONObject(response);
                         JSONArray dataArray = newData.getJSONArray("reports");
-                        for (int i = 0; i <= dataArray.length(); i++) {
+                        for (int i = 0; i < dataArray.length(); i++) {
                             int idr = (Integer) dataArray.getJSONObject(i).get("idr");
                             String lat = (String) dataArray.getJSONObject(i).get("latr");
                             String lon = (String) dataArray.getJSONObject(i).get("longr");
@@ -342,11 +333,24 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
             finish();
         }
+
+        // adding on click listener to marker of google maps.
+        gmap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                // on marker click we are getting the title of our marker
+                // which is clicked and displaying it in a toast message.
+                String markerName = marker.getTitle();
+                Toast.makeText(MapaActivity.this, "Clicked location is " + markerName, Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 
     public void report() {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://crowdzeromapi.herokuapp.com/locals";
+        String url2 ="https://crowdzeromapi.herokuapp.com/reportPost";
         getCurrentLocation();
 
         Location startPoint = new Location("locationA");
@@ -394,8 +398,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
         queue.add(stringRequest1);
 
-        String url2 ="https://crowdzeromapi.herokuapp.com/reportPost";
-
         StringRequest sr = new StringRequest(Request.Method.POST, url2,
                 new Response.Listener<String>() {
                     @Override
@@ -403,24 +405,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                         try {
                             if (!response.equals("[]")){
                                 String[] sep = response.split(":");
-                                /*rIdu = sep[1].split(",");
-                                rCargo = sep[2].split(",");
-                                rNome = sep[3].split(",");
-                                rEmail = sep[5].split(",");
-                                rPass = sep[6].split(",");
-                                rPass[0] = rPass[0].replace("\"", "");
-
-                                if (rPass[0].equals(password)){
-                                    Log.e("HttpClient", "success! response: " + response.toString());
-                                    session.setId(rIdu[0] = rIdu[0].replace("\"", ""));
-                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                    finish();
-                                }
-                                else {
-                                    Toast.makeText(LoginActivity.this, "Credenciais incorretas", Toast.LENGTH_SHORT).show();
-                                }
-                               /* Toast.makeText(LoginActivity.this, sep[6].toString(), Toast.LENGTH_SHORT).show();
-                                Toast.makeText(LoginActivity.this, rPass[0].toString(), Toast.LENGTH_SHORT).show();*/
                             }
                         }catch(Error error) {
                             Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
@@ -436,11 +420,11 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("idu", "1");
-                params.put("idl", "1");
-                params.put("latitude", "43");
-                params.put("longitude", "-7");
-                params.put("nivel", "3");
+                params.put("idu", String.valueOf(session.getId()));
+                params.put("idl", String.valueOf(idlR));
+                params.put("latitude", String.valueOf(loc.latitude));
+                params.put("longitude", String.valueOf(loc.longitude));
+                params.put("nivel", String.valueOf(nivel));
                 params.put("data", String.valueOf(LocalDateTime.now()));
                 return params;
             }
@@ -514,8 +498,8 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
-
     }
+
     private boolean isGPSEnabled(){
         LocationManager locationManager = null;
         boolean isEnabled = false;
@@ -526,5 +510,19 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         return isEnabled;
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnPop1:
+                    nivel = 1;
+                break;
+            case R.id.btnPop2:
+                    nivel = 2;
+                break;
+            case R.id.btnPop3:
+                    nivel = 3;
+                break;
+        }
     }
 }
