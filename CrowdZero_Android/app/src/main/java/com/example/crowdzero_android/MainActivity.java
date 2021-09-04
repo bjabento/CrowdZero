@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             if (!response.equals("[]")){
                                 String[] sep = response.split(":");
                                 rCargo = sep[2].split(",");
-                                rNome = sep[3].split(",");
+                                rNome = sep[4].split(",");
 
                                 tUser.setText(rNome[0] = rNome[0].replace("\"", ""));
                                 rCargo[0] = rCargo[0].replace("\"", "");

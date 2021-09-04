@@ -44,7 +44,7 @@ public class SendFeedbackActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(SendFeedbackActivity.this);
         String urlRep = "https://crowdzeromapi.herokuapp.com/reportsData";
 
-        StringRequest sr = new StringRequest(Request.Method.POST, urlRep,
+        StringRequest sra = new StringRequest(Request.Method.POST, urlRep,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -56,7 +56,7 @@ public class SendFeedbackActivity extends AppCompatActivity {
                             Log.d("log", newData.toString());
                             for (int i = 0; i < dataArray.length(); i++) {
                                 idU = (Integer) dataArray.getJSONObject(i).get("idu");
-                                Log.d("log1", String.valueOf(idU));
+                                Log.d("log11111", String.valueOf(idU));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -73,6 +73,52 @@ public class SendFeedbackActivity extends AppCompatActivity {
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
                 params.put("idr", String.valueOf(idR));
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type","application/x-www-form-urlencoded");
+                return params;
+            }
+        };
+        queue.add(sra);
+
+        String url2 ="https://crowdzeromapi.herokuapp.com/userData";
+        RequestQueue queue2 = Volley.newRequestQueue(this);
+        Log.d("cota", String.valueOf(idU));
+
+        StringRequest sr = new StringRequest(Request.Method.POST, url2,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("HttpClient", "success! response: " + response.toString());
+                        try {
+                            JSONObject newData = new JSONObject(response);
+                            JSONArray dataArray = newData.getJSONArray("user");
+
+                            pontos = (Integer) dataArray.getJSONObject(0).get("cargo");
+                            nome = (String) dataArray.getJSONObject(0).get("nome");
+                            email = (String) dataArray.getJSONObject(0).get("email");
+                            pass = (String) dataArray.getJSONObject(0).get("pass");
+                            contacto = Integer.parseInt((String) dataArray.getJSONObject(0).get("contacto"));
+                            cc = Integer.parseInt((String) dataArray.getJSONObject(0).get("cc"));
+
+                        }catch(Error | JSONException error) {
+                            Toast.makeText(SendFeedbackActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("HttpClient", "error: " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("id", String.valueOf(idU));
                 return params;
             }
             @Override
@@ -150,50 +196,6 @@ public class SendFeedbackActivity extends AppCompatActivity {
     }
 
     private void atualizarPontos(boolean ponto){
-        String url ="https://crowdzeromapi.herokuapp.com/userData";
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        StringRequest sr = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.e("HttpClient", "success! response: " + response.toString());
-                        try {
-                            JSONObject newData = new JSONObject(response);
-                            JSONArray dataArray = newData.getJSONArray("user");
-                            for (int i = 0; i < dataArray.length(); i++) {
-                                pontos = Integer.parseInt((String) dataArray.getJSONObject(i).get("cargo"));
-                                nome = (String) dataArray.getJSONObject(i).get("nome");
-                                email = (String) dataArray.getJSONObject(i).get("email");
-                                pass = (String) dataArray.getJSONObject(i).get("password");
-                                contacto = Integer.parseInt((String) dataArray.getJSONObject(i).get("contacto"));
-                                cc = Integer.parseInt((String) dataArray.getJSONObject(i).get("cc"));
-                            }
-                        }catch(Error | JSONException error) {
-                            Toast.makeText(SendFeedbackActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("HttpClient", "error: " + error.toString());
-            }
-        })
-        {
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("id", String.valueOf(idU));
-                return params;
-            }
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/x-www-form-urlencoded");
-                return params;
-            }
-        };
-        queue.add(sr);
 
         if (!ponto) {
             pontos -= 1;
@@ -201,10 +203,12 @@ public class SendFeedbackActivity extends AppCompatActivity {
             pontos ++;
         }
 
-        RequestQueue queueFeed = Volley.newRequestQueue(SendFeedbackActivity.this);
-        String urlFdb = "https://crowdzeromapi.herokuapp.com/updateUser/" + idU;
+        Log.d("dados", String.valueOf(pontos));
 
-        StringRequest sa = new StringRequest(Request.Method.POST, urlFdb,
+        RequestQueue queuea = Volley.newRequestQueue(SendFeedbackActivity.this);
+        String urlAu = "https://crowdzeromapi.herokuapp.com/updateUser/" + idU;
+
+        StringRequest sa = new StringRequest(Request.Method.POST, urlAu,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -225,9 +229,9 @@ public class SendFeedbackActivity extends AppCompatActivity {
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
                 params.put("cargo", String.valueOf(pontos));
-                params.put("nome", nome.toString());
-                params.put("email", email.toString());
-                params.put("pass", pass.toString());
+                params.put("nome", nome);
+                params.put("email", email);
+                params.put("pass", pass);
                 params.put("contacto", String.valueOf(contacto));
                 params.put("cc", String.valueOf(cc));
                 return params;
@@ -239,6 +243,8 @@ public class SendFeedbackActivity extends AppCompatActivity {
                 return params;
             }
         };
-        queueFeed.add(sa);
+        queuea.add(sa);
+
+        finish();
     }
 }
