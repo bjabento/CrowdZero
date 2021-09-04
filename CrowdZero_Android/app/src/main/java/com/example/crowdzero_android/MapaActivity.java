@@ -22,8 +22,10 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -78,6 +80,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     private double lat, lon;
     private int idlR;
     private int nivel;
+    private boolean feedback;
     LatLng loc;
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationManager lmanager;
@@ -89,6 +92,8 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
+
+        session = new Session(this);
 
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
@@ -338,10 +343,77 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         gmap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                // on marker click we are getting the title of our marker
-                // which is clicked and displaying it in a toast message.
-                String markerName = marker.getTitle();
-                Toast.makeText(MapaActivity.this, "Clicked location is " + markerName, Toast.LENGTH_SHORT).show();
+                RequestQueue queue = Volley.newRequestQueue(MapaActivity.this);
+                String url = "https://crowdzeromapi.herokuapp.com/feedbackPost";
+                String idF = marker.getTitle();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapaActivity.this);
+
+                //Set title for AlertDialog
+                builder.setTitle("Dialog with 2 Buttons");
+
+                //Set body message of Dialog
+                builder.setMessage("See Android tuts at DevExchanges.info");
+
+                //// Is dismiss when touching outside?
+                builder.setCancelable(true);
+
+                //Positive Button and it onClicked event listener
+                builder.setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                feedback = true;
+                            }
+                        });
+
+                //Negative Button
+                builder.setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                feedback = false;
+                            }
+                        });
+
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                StringRequest sr = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    if (!response.equals("[]")){
+                                        String[] sep = response.split(":");
+                                    }
+                                }catch(Error error) {
+                                    Toast.makeText(MapaActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("HttpClient", "error: " + error.toString());
+                    }
+                })
+                {
+                    @Override
+                    protected Map<String,String> getParams(){
+                        Map<String,String> params = new HashMap<String, String>();
+                        params.put("idu", session.getId().toString());
+                        params.put("idr", idF);
+                        params.put("feedb", String.valueOf(feedback));
+                        return params;
+                    }
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String,String> params = new HashMap<String, String>();
+                        params.put("Content-Type","application/x-www-form-urlencoded");
+                        return params;
+                    }
+                };
+                queue.add(sr);
+
                 return false;
             }
         });
