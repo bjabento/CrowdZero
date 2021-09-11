@@ -21,13 +21,17 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private Session session;
-    private String[] rCargo, rNome;
-    ImageView c1, c2, c3;
+    private int rCargo;
+    ImageView c1, c2, c3, icon;
     Button bMap, bLogo;
     TextView tUser, tCargo;
 
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         c1 = findViewById(R.id.btnPoints);
         c2 = findViewById(R.id.btnPerfil);
         c3 = findViewById(R.id.btnContactos);
+        icon = findViewById(R.id.imageView4);
         bMap = findViewById(R.id.btnMapa);
         tUser = findViewById(R.id.txtUsername);
         tCargo = findViewById(R.id.txtCargo);
@@ -55,22 +60,23 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.e("HttpClient", "success! response: " + response.toString());
                         try {
-                            if (!response.equals("[]")){
-                                String[] sep = response.split(":");
-                                rCargo = sep[2].split(",");
-                                rNome = sep[4].split(",");
+                            JSONObject newData = new JSONObject(response);
+                            JSONArray dataArray = newData.getJSONArray("user");
 
-                                tUser.setText(rNome[0] = rNome[0].replace("\"", ""));
-                                rCargo[0] = rCargo[0].replace("\"", "");
-                                if (Integer.parseInt(rCargo[0]) <= 50){
-                                    tCargo.setText("Cidadão");
-                                } else if (Integer.parseInt(rCargo[0]) > 50 && Integer.parseInt(rCargo[0]) <= 200) {
-                                    tCargo.setText("Agente Sanitário");
-                                } else if (Integer.parseInt(rCargo[0]) > 200) {
-                                    tCargo.setText("Agente de Saúde");
-                                }
+                            rCargo = (Integer) dataArray.getJSONObject(0).get("cargo");
+                            tUser.setText((String) dataArray.getJSONObject(0).get("nome"));
+
+                            if (rCargo<= 50){
+                                tCargo.setText("Cidadão");
+                                icon.setImageResource(R.drawable.avatar);
+                            } else if (rCargo > 50 && rCargo <= 200) {
+                                tCargo.setText("Agente Sanitário");
+                                icon.setImageResource(R.drawable.avatar2);
+                            } else if (rCargo > 200) {
+                                tCargo.setText("Agente de Saúde");
+                                icon.setImageResource(R.drawable.avatar3);
                             }
-                        }catch(Error error) {
+                        }catch(Error | JSONException error) {
                             Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }

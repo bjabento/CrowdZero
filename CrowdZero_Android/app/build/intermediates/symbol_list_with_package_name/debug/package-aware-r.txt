@@ -1712,6 +1712,8 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avatar
+drawable avatar2
+drawable avatar3
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -1763,6 +1765,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable loginbutton
 drawable logorb
+drawable logowb
 drawable mapmenubackground
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -2240,6 +2243,7 @@ id textView
 id textView2
 id textView3
 id textView4
+id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2459,6 +2463,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap logorb
 navigation nav_graph
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description

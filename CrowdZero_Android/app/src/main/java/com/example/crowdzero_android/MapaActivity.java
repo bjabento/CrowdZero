@@ -118,7 +118,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 switch (view.getId()) {
                     case R.id.btnPop1:
                         nivel = 1;
-                        Toast.makeText(MapaActivity.this, "cheguei aqui", Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -129,7 +128,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 switch (view.getId()) {
                     case R.id.btnPop2:
                         nivel = 2;
-                        Toast.makeText(MapaActivity.this, "cheguei aqui", Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -140,7 +138,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 switch (view.getId()) {
                     case R.id.btnPop3:
                         nivel = 3;
-                        Toast.makeText(MapaActivity.this, "cheguei aqui", Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -163,7 +160,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                //Toast.makeText(MapaActivity.this, "Tenho permissão", Toast.LENGTH_SHORT).show();
                 if (gpsen()) {
                     LocationServices.getFusedLocationProviderClient(MapaActivity.this)
                             .requestLocationUpdates(locationRequest, new LocationCallback() {
@@ -212,7 +208,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (requestCode == 2) {
             if (resultCode == Activity.RESULT_OK) {
-
                 getCurrentLocation();
             }
         }
@@ -306,7 +301,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                             Log.d("idlMESSAGE", Integer.toString(idl));
 
 
-                            gmap.addMarker(new MarkerOptions().position(local).title(nome).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).snippet(String.valueOf(idl)));
+                            gmap.addMarker(new MarkerOptions().position(local).title(nome).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                             Circle circle = gmap.addCircle(new CircleOptions()
                                     .center(local)
                                     .radius(200)
@@ -322,7 +317,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     Log.d("longitude", Double.toString(location.getLongitude()));
 
                                     loc = new LatLng(location.getLatitude(),location.getLongitude());
-                                    Toast.makeText(MapaActivity.this, loc.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                         } else {
@@ -336,7 +330,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Log.d("fail", error.toString());
-                    //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
                 }
             });
             queue.add(stringRequest1);
@@ -353,10 +346,18 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                             int idr = (Integer) dataArray.getJSONObject(i).get("idr");
                             String lat = (String) dataArray.getJSONObject(i).get("latr");
                             String lon = (String) dataArray.getJSONObject(i).get("longr");
-                            Log.d("idrMESSAGE", Integer.toString(idr));
+                            int n = (Integer) dataArray.getJSONObject(i).get("nivel");
+                            //Log.d("idrMESSAGE", Integer.toString(idr));
 
                             LatLng loc = new LatLng(Double.valueOf(lat),Double.valueOf(lon));
-                            gmap.addMarker(new MarkerOptions().position(loc).title(String.valueOf(idr)));
+
+                            if (n == 1){
+                                gmap.addMarker(new MarkerOptions().position(loc).snippet(String.valueOf(idr)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                            } else if(n == 2){
+                                gmap.addMarker(new MarkerOptions().position(loc).snippet(String.valueOf(idr)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                            } else if (n == 3) {
+                                gmap.addMarker(new MarkerOptions().position(loc).snippet(String.valueOf(idr)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                            }
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -366,7 +367,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Log.d("fail", error.toString());
-                    //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
                 }
             });
             queue.add(stringRequest2);
@@ -378,15 +378,17 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         gmap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                idF = marker.getTitle();
+                idF = marker.getSnippet();
 
-                Toast.makeText(MapaActivity.this, session.getId().toString() + ";" + idF.toString(), Toast.LENGTH_SHORT).show();
+                if (marker.getTitle() == null)
+                {
+                    Toast.makeText(MapaActivity.this, session.getId().toString() + ";" + idF.toString(), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), SendFeedbackActivity.class);
-                intent.putExtra("message", idF);
+                    Intent intent = new Intent(getApplicationContext(), SendFeedbackActivity.class);
+                    intent.putExtra("message", idF);
 
-                startActivity(intent);
-
+                    startActivity(intent);
+                }
                 return false;
             }
         });
@@ -437,7 +439,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("fail", error.toString());
-                //Toast.makeText(MainActivity.this, Log.d("fail" , "dota"), Toast.LENGTH_SHORT).show();
             }
         });
         queue.add(stringRequest);
@@ -494,6 +495,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             };
         queueRepo.add(sr);
+        Toast.makeText(MapaActivity.this, "Obrigado pelo seu report", Toast.LENGTH_SHORT).show();
     }
 
     private void getCurrentLocation(){

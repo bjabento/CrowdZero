@@ -54,8 +54,10 @@ import java.util.Map;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    private ImageView backButton;
+    private ImageView backButton, icon;
     TextInputLayout email, nome, pass, cont;
+    TextView name, points;
+    int pontos;
     Session session;
 
     @Override
@@ -69,6 +71,9 @@ public class PerfilActivity extends AppCompatActivity {
         email = (TextInputLayout) findViewById(R.id.txtEmail);
         pass = (TextInputLayout) findViewById(R.id.txtPassword);
         cont = (TextInputLayout) findViewById(R.id.txtContact);
+        name = findViewById(R.id.txtUsername);
+        points = findViewById(R.id.txtCargo);
+        icon = findViewById(R.id.imageView4);
 
         findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,10 +94,24 @@ public class PerfilActivity extends AppCompatActivity {
                             JSONObject newData = new JSONObject(response);
                             JSONArray dataArray = newData.getJSONArray("user");
                             for (int i = 0; i < dataArray.length(); i++) {
+                                pontos = (Integer) dataArray.getJSONObject(0).get("cargo");
                                 nome.getEditText().setText((String) dataArray.getJSONObject(i).get("nome"));
+                                name.setText((String) dataArray.getJSONObject(0).get("nome"));
                                 email.getEditText().setText((String) dataArray.getJSONObject(i).get("email"));
                                 pass.getEditText().setText((String) dataArray.getJSONObject(i).get("pass"));
                                 cont.getEditText().setText(dataArray.getJSONObject(i).get("contacto").toString());
+
+                                points.setText(String.valueOf(pontos));
+                                if (pontos <= 50){
+                                    points.setText("Cidadão");
+                                    icon.setImageResource(R.drawable.avatar);
+                                } else if (pontos > 50 && pontos <= 200) {
+                                    points.setText("Agente Sanitário");
+                                    icon.setImageResource(R.drawable.avatar2);
+                                } else if (pontos > 200) {
+                                    points.setText("Agente de Saúde");
+                                    icon.setImageResource(R.drawable.avatar3);
+                                }
                             }
                         }catch(Error | JSONException error) {
                             Toast.makeText(PerfilActivity.this, error.toString(), Toast.LENGTH_SHORT).show();

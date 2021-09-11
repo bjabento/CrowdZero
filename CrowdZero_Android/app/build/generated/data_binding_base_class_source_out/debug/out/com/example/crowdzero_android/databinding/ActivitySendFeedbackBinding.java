@@ -28,12 +28,16 @@ public final class ActivitySendFeedbackBinding implements ViewBinding {
   @NonNull
   public final TextView textView3;
 
+  @NonNull
+  public final TextView textView5;
+
   private ActivitySendFeedbackBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnF,
-      @NonNull Button btnV, @NonNull TextView textView3) {
+      @NonNull Button btnV, @NonNull TextView textView3, @NonNull TextView textView5) {
     this.rootView = rootView;
     this.btnF = btnF;
     this.btnV = btnV;
     this.textView3 = textView3;
+    this.textView5 = textView5;
   }
 
   @Override
@@ -81,7 +85,14 @@ public final class ActivitySendFeedbackBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySendFeedbackBinding((ConstraintLayout) rootView, btnF, btnV, textView3);
+      id = R.id.textView5;
+      TextView textView5 = rootView.findViewById(id);
+      if (textView5 == null) {
+        break missingId;
+      }
+
+      return new ActivitySendFeedbackBinding((ConstraintLayout) rootView, btnF, btnV, textView3,
+          textView5);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

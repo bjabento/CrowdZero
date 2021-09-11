@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="20dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toTopOf="@+id/btnPop3"
         app:layout_constraintEnd_toStartOf="@+id/btnPop2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toTopOf="@+id/btnPop3"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/populado2" />
@@ -72,6 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toTopOf="@+id/btnSubmeter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
