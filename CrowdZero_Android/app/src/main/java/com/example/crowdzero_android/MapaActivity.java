@@ -29,6 +29,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -106,12 +107,12 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btnMenu2:
+                        startActivity(new Intent(MapaActivity.this, MainActivity.class));
                         finish();
                         break;
                 }
             }
         });
-
         findViewById(R.id.btnPop1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,7 +143,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
-
         findViewById(R.id.btnSubmeter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,9 +158,10 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync(this);
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                if (gpsen()) {
+                if (isGPSEnabled()) {
                     LocationServices.getFusedLocationProviderClient(MapaActivity.this)
                             .requestLocationUpdates(locationRequest, new LocationCallback() {
                                 @Override
@@ -183,8 +184,8 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    /* @Override
+   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (requestCode == 1) {
@@ -192,7 +193,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 if (isGPSEnabled()) {
 
-                    getCurrentLocation();
+                    //();
 
                 } else {
 
@@ -200,7 +201,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         }
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -208,12 +209,12 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (requestCode == 2) {
             if (resultCode == Activity.RESULT_OK) {
-                getCurrentLocation();
+                //getCurrentLocation();
             }
         }
     }
 
-    private boolean gpsen() {
+    /*private boolean gpsen() {
         LocationManager locationManager = null;
         boolean isEnabled = false;
 
@@ -223,7 +224,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         return isEnabled;
-    }
+    }*/
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -283,6 +284,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             gmap.setMyLocationEnabled(true);
+            //getCurrentLocation();
 
             StringRequest stringRequest1 = new StringRequest(Request.Method.GET, url1, new Response.Listener<String>() {
                 @Override
@@ -307,6 +309,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     .radius(200)
                                     .strokeColor(Color.BLUE));
                         }
+
                         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapaActivity.this);
                         if (ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                             fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
@@ -395,9 +398,10 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void verifReport(){
+
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://crowdzeromapi.herokuapp.com/locals";
-        getCurrentLocation();
+        //getCurrentLocation();
 
         Location startPoint = new Location("locationA");
         startPoint.setLatitude(loc.latitude);
@@ -431,6 +435,14 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                             idlR = 0;
                         }
                     }
+                    Log.d("idlR", Double.toString(idlR));
+                    if (idlR > 0){
+                        Log.d("idlR", Double.toString(idlR));
+                        report();
+                    }
+                    else{
+                        Toast.makeText(MapaActivity.this, "Não se encontra perto de um ponto", Toast.LENGTH_SHORT).show();
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -442,15 +454,6 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
         queue.add(stringRequest);
-
-        Log.d("idlR", Double.toString(idlR));
-        if (idlR > 0){
-            Log.d("idlR", Double.toString(idlR));
-            report();
-        }
-        else{
-            Toast.makeText(MapaActivity.this, "Não se encontra perto de um ponto", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public void report() {
@@ -494,11 +497,12 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                     return params;
                 }
             };
+            sr.setRetryPolicy(new DefaultRetryPolicy(0,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queueRepo.add(sr);
         Toast.makeText(MapaActivity.this, "Obrigado pelo seu report", Toast.LENGTH_SHORT).show();
     }
 
-    private void getCurrentLocation(){
+    /*private void getCurrentLocation(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if(ActivityCompat.checkSelfPermission(MapaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 if(isGPSEnabled()){
@@ -527,7 +531,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
         }
-    }
+    }*/
 
     private void turnOnGPS() {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);

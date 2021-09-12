@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -58,7 +59,6 @@ public class PerfilActivity extends AppCompatActivity {
     TextInputLayout email, nome, pass, cont, caci;
     TextView name, points;
     int pontos;
-    //String google;
     Session session;
     Button edit, save;
 
@@ -86,6 +86,7 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                startActivity(new Intent(PerfilActivity.this, MainActivity.class));
             }
         });
         findViewById(R.id.btnEditar).setOnClickListener(new View.OnClickListener() {
@@ -100,6 +101,13 @@ public class PerfilActivity extends AppCompatActivity {
                 guardar();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(PerfilActivity.this, MainActivity.class));
+        finish();
     }
 
     private void popText() {
@@ -194,7 +202,7 @@ public class PerfilActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             try {
-                                if (response.equals("Success")){
+                                if (response.equals("update success")){
                                     email.setEnabled(false);
                                     nome.setEnabled(false);
                                     pass.setEnabled(false);
@@ -222,13 +230,11 @@ public class PerfilActivity extends AppCompatActivity {
                 @Override
                 protected Map<String,String> getParams(){
                     Map<String,String> params = new HashMap<String, String>();
-                    params.put("car", points.getText().toString());
-                    params.put("nom", nome.getEditText().getText().toString());
-                    params.put("ema", email.getEditText().getText().toString());
-                    params.put("pas", pass.getEditText().getText().toString());
-                    params.put("con", cont.getEditText().getText().toString());
-                    params.put("cci", caci.getEditText().getText().toString());
-                    //params.put("idg", google.toString());
+                    params.put("nome", nome.getEditText().getText().toString());
+                    params.put("email", email.getEditText().getText().toString());
+                    params.put("pass", pass.getEditText().getText().toString());
+                    params.put("contacto", cont.getEditText().getText().toString());
+                    params.put("cc", caci.getEditText().getText().toString());
                     return params;
                 }
                 @Override
@@ -238,6 +244,7 @@ public class PerfilActivity extends AppCompatActivity {
                     return params;
                 }
             };
+            reqUpdat.setRetryPolicy(new DefaultRetryPolicy(0,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             queueUpU.add(reqUpdat);
         }
     }

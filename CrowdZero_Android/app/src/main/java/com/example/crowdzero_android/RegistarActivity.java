@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -91,6 +92,7 @@ public class RegistarActivity extends AppCompatActivity {
                 return params;
             }
         };
+        reqRegist.setRetryPolicy(new DefaultRetryPolicy(0,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queueRegU.add(reqRegist);
 
         startActivity(new Intent(RegistarActivity.this, LoginActivity.class));

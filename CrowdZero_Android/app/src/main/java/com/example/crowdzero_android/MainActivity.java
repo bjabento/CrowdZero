@@ -1,5 +1,6 @@
 package com.example.crowdzero_android;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.btnPoints:
                         startActivity(new Intent(MainActivity.this, PontosActivity.class));
+                        finish();
                         break;
                 }
             }
@@ -151,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btnLogout:
-                        finish();
+                        logout();
                         break;
                 }
             }
@@ -161,5 +163,16 @@ public class MainActivity extends AppCompatActivity {
 
     protected void openMapa(){
         startActivity(new Intent(MainActivity.this, MapaActivity.class));
+        finish();
+    }
+
+    private void logout() {
+        SharedPreferences preferences = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.clear();
+        editor.apply();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        finish();
     }
 }

@@ -51,6 +51,13 @@ public class PontosActivity extends AppCompatActivity {
         rank();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(PontosActivity.this, MainActivity.class));
+        finish();
+    }
+
     private void carregarPontos() {
 
         Log.d("log1:", nome + pontos);
