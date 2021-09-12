@@ -30,9 +30,9 @@ public class PontosActivity extends AppCompatActivity {
 
     Session session;
     String nome;
-    TextView user, cargo, points, rank;
+    TextView user, cargo, points, rank, next;
     ImageView icon;
-    private int pontos, n;
+    private int pontos, n, nNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class PontosActivity extends AppCompatActivity {
         cargo = findViewById(R.id.txtCargo);
         points = findViewById(R.id.pointsnum);
         rank = findViewById(R.id.txtRank);
+        next = findViewById(R.id.txtNext);
 
         carregarPontos();
         rank();
@@ -122,8 +123,15 @@ public class PontosActivity extends AppCompatActivity {
                             for (int i = 0; i < dataArray.length(); i++){
                                 n++;
                                 if (Integer.valueOf(dataArray.getJSONObject(i).get("idu").toString()) == Integer.valueOf(session.getId())) {
-                                    rank.setText("#" + n + "/" + dataArray.length());
-                                    break;
+                                    if (n == 1) {
+                                        rank.setText("#" + n + "/" + dataArray.length());
+                                        break;
+                                    }else if (n > 1) {
+                                        nNext = Integer.valueOf(dataArray.getJSONObject(i-1).get("cargo").toString()) - pontos + 1;
+                                        rank.setText("#" + n + "/" + dataArray.length());
+                                        next.setText(nNext + " pontos para alcançar o próximo rank");
+                                        break;
+                                    }
                                 }
                             }
                         }catch(Error | JSONException error) {

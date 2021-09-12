@@ -180,47 +180,65 @@ public class PerfilActivity extends AppCompatActivity {
         String urlUpdU ="https://crowdzeromapi.herokuapp.com/updateUser/" + session.getId();
         RequestQueue queueUpU = Volley.newRequestQueue(this);
 
-        StringRequest reqUpdat = new StringRequest(Request.Method.POST, urlUpdU,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            if (!response.equals("Success")){
-                                Toast.makeText(PerfilActivity.this, "Dados atualizados com sucesso", Toast.LENGTH_SHORT).show();
+        String con, carcid;
+        con = cont.getEditText().getText().toString();
+        carcid = caci.getEditText().getText().toString();
+
+        if (con.length() != 9 && !con.equals("")) {
+            Toast.makeText(PerfilActivity.this, "Número do contacto incorreto", Toast.LENGTH_SHORT).show();
+        } else if (carcid.length() != 9 || carcid.equals("")) {
+            Toast.makeText(PerfilActivity.this, "Número do Cartão de Cidadão incorreto", Toast.LENGTH_SHORT).show();
+        } else {
+            StringRequest reqUpdat = new StringRequest(Request.Method.POST, urlUpdU,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                if (response.equals("Success")){
+                                    email.setEnabled(false);
+                                    nome.setEnabled(false);
+                                    pass.setEnabled(false);
+                                    cont.setEnabled(false);
+                                    caci.setEnabled(false);
+
+                                    edit.setVisibility(View.VISIBLE);
+                                    save.setVisibility(View.INVISIBLE);
+                                    Toast.makeText(PerfilActivity.this, "Dados atualizados com sucesso", Toast.LENGTH_SHORT).show();
+                                }
+                                else if (response.equals("Fail")){
+                                    Toast.makeText(PerfilActivity.this, "Erro ao atualizar", Toast.LENGTH_SHORT).show();
+                                }
+                            }catch(Error error) {
+                                Toast.makeText(PerfilActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                             }
-                            else if (!response.equals("Fail")){
-                                Toast.makeText(PerfilActivity.this, "Erro ao atualizar", Toast.LENGTH_SHORT).show();
-                            }
-                        }catch(Error error) {
-                            Toast.makeText(PerfilActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                         }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("HttpClient", "error: " + error.toString());
-            }
-        })
-        {
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("car", points.getText().toString());
-                params.put("nom", nome.getEditText().getText().toString());
-                params.put("ema", email.getEditText().getText().toString());
-                params.put("pas", pass.getEditText().getText().toString());
-                params.put("con", cont.getEditText().getText().toString());
-                params.put("cci", caci.getEditText().getText().toString());
-                //params.put("idg", google.toString());
-                return params;
-            }
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/x-www-form-urlencoded");
-                return params;
-            }
-        };
-        queueUpU.add(reqUpdat);
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.e("HttpClient", "error: " + error.toString());
+                }
+            })
+            {
+                @Override
+                protected Map<String,String> getParams(){
+                    Map<String,String> params = new HashMap<String, String>();
+                    params.put("car", points.getText().toString());
+                    params.put("nom", nome.getEditText().getText().toString());
+                    params.put("ema", email.getEditText().getText().toString());
+                    params.put("pas", pass.getEditText().getText().toString());
+                    params.put("con", cont.getEditText().getText().toString());
+                    params.put("cci", caci.getEditText().getText().toString());
+                    //params.put("idg", google.toString());
+                    return params;
+                }
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<String, String>();
+                    params.put("Content-Type","application/x-www-form-urlencoded");
+                    return params;
+                }
+            };
+            queueUpU.add(reqUpdat);
+        }
     }
 }

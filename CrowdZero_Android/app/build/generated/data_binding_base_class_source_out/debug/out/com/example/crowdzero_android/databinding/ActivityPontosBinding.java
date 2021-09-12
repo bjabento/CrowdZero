@@ -42,6 +42,9 @@ public final class ActivityPontosBinding implements ViewBinding {
   public final TextView txtCargo;
 
   @NonNull
+  public final TextView txtNext;
+
+  @NonNull
   public final TextView txtRank;
 
   @NonNull
@@ -50,7 +53,7 @@ public final class ActivityPontosBinding implements ViewBinding {
   private ActivityPontosBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView3,
       @NonNull CardView menuUserBar, @NonNull ImageView pointslogo, @NonNull TextView pointsnum,
       @NonNull TextView textView4, @NonNull TextView textView6, @NonNull TextView txtCargo,
-      @NonNull TextView txtRank, @NonNull TextView txtUsername) {
+      @NonNull TextView txtNext, @NonNull TextView txtRank, @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.imageView3 = imageView3;
     this.menuUserBar = menuUserBar;
@@ -59,6 +62,7 @@ public final class ActivityPontosBinding implements ViewBinding {
     this.textView4 = textView4;
     this.textView6 = textView6;
     this.txtCargo = txtCargo;
+    this.txtNext = txtNext;
     this.txtRank = txtRank;
     this.txtUsername = txtUsername;
   }
@@ -132,6 +136,12 @@ public final class ActivityPontosBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtNext;
+      TextView txtNext = rootView.findViewById(id);
+      if (txtNext == null) {
+        break missingId;
+      }
+
       id = R.id.txtRank;
       TextView txtRank = rootView.findViewById(id);
       if (txtRank == null) {
@@ -145,7 +155,7 @@ public final class ActivityPontosBinding implements ViewBinding {
       }
 
       return new ActivityPontosBinding((ConstraintLayout) rootView, imageView3, menuUserBar,
-          pointslogo, pointsnum, textView4, textView6, txtCargo, txtRank, txtUsername);
+          pointslogo, pointsnum, textView4, textView6, txtCargo, txtNext, txtRank, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
