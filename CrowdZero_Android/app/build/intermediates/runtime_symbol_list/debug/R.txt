@@ -1907,7 +1907,9 @@ int id bottom 0x7f08005c
 int id bounce 0x7f08005d
 int id btnBack 0x7f08005e
 int id btnContactos 0x7f08005f
+int id btnEditar 0x7f0801e8
 int id btnF 0x7f080060
+int id btnGuardar 0x7f0801e9
 int id btnLogin 0x7f080061
 int id btnLoginG 0x7f080062
 int id btnLogout 0x7f080063
@@ -1924,7 +1926,6 @@ int id btnReg 0x7f08006d
 int id btnRegist 0x7f08006e
 int id btnSubmeter 0x7f08006f
 int id btnV 0x7f080070
-int id button 0x7f0801e7
 int id buttonPanel 0x7f080071
 int id button_first 0x7f080072
 int id button_second 0x7f080073
@@ -2273,6 +2274,7 @@ int id transition_scene_layoutid_cache 0x7f0801c7
 int id transition_transform 0x7f0801c8
 int id triangle 0x7f0801c9
 int id txtCargo 0x7f0801ca
+int id txtCc 0x7f0801eb
 int id txtContact 0x7f0801cb
 int id txtEmail 0x7f0801cc
 int id txtName 0x7f0801cd

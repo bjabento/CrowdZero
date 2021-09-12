@@ -1,7 +1,3 @@
-com/example/crowdzero_android/BuildConfig.java
- com.example.crowdzero_android.BuildConfig
-com/example/crowdzero_android/Session.java
- com.example.crowdzero_android.Session
 com/example/crowdzero_android/MapaActivity.java
  com.example.crowdzero_android.MapaActivity
  com.example.crowdzero_android.MapaActivity$1
@@ -34,19 +30,22 @@ com/example/crowdzero_android/databinding/FragmentFirstBinding.java
  com.example.crowdzero_android.databinding.FragmentFirstBinding
 com/example/crowdzero_android/databinding/ActivityPerfilBinding.java
  com.example.crowdzero_android.databinding.ActivityPerfilBinding
+com/example/crowdzero_android/Session.java
+ com.example.crowdzero_android.Session
 com/example/crowdzero_android/SplashActivity.java
  com.example.crowdzero_android.SplashActivity
  com.example.crowdzero_android.SplashActivity$1
-com/example/crowdzero_android/MainActivity.java
- com.example.crowdzero_android.MainActivity
- com.example.crowdzero_android.MainActivity$1
- com.example.crowdzero_android.MainActivity$2
- com.example.crowdzero_android.MainActivity$3
- com.example.crowdzero_android.MainActivity$4
- com.example.crowdzero_android.MainActivity$5
- com.example.crowdzero_android.MainActivity$6
- com.example.crowdzero_android.MainActivity$7
- com.example.crowdzero_android.MainActivity$8
+com/example/crowdzero_android/PerfilActivity.java
+ com.example.crowdzero_android.PerfilActivity
+ com.example.crowdzero_android.PerfilActivity$1
+ com.example.crowdzero_android.PerfilActivity$2
+ com.example.crowdzero_android.PerfilActivity$3
+ com.example.crowdzero_android.PerfilActivity$4
+ com.example.crowdzero_android.PerfilActivity$5
+ com.example.crowdzero_android.PerfilActivity$6
+ com.example.crowdzero_android.PerfilActivity$7
+ com.example.crowdzero_android.PerfilActivity$8
+ com.example.crowdzero_android.PerfilActivity$9
 com/example/crowdzero_android/databinding/FragmentSecondBinding.java
  com.example.crowdzero_android.databinding.FragmentSecondBinding
 com/example/crowdzero_android/databinding/ActivitySplashBinding.java
@@ -80,12 +79,8 @@ com/example/crowdzero_android/databinding/ActivityMapaBinding.java
  com.example.crowdzero_android.databinding.ActivityMapaBinding
 com/example/crowdzero_android/databinding/ActivityRegistarBinding.java
  com.example.crowdzero_android.databinding.ActivityRegistarBinding
-com/example/crowdzero_android/PerfilActivity.java
- com.example.crowdzero_android.PerfilActivity
- com.example.crowdzero_android.PerfilActivity$1
- com.example.crowdzero_android.PerfilActivity$2
- com.example.crowdzero_android.PerfilActivity$3
- com.example.crowdzero_android.PerfilActivity$4
+com/example/crowdzero_android/databinding/ActivityLoginBinding.java
+ com.example.crowdzero_android.databinding.ActivityLoginBinding
 com/example/crowdzero_android/SendFeedbackActivity.java
  com.example.crowdzero_android.SendFeedbackActivity
  com.example.crowdzero_android.SendFeedbackActivity$1
@@ -98,8 +93,20 @@ com/example/crowdzero_android/SendFeedbackActivity.java
  com.example.crowdzero_android.SendFeedbackActivity$8
 com/example/crowdzero_android/databinding/ActivityContactosBinding.java
  com.example.crowdzero_android.databinding.ActivityContactosBinding
+com/example/crowdzero_android/BuildConfig.java
+ com.example.crowdzero_android.BuildConfig
 com/example/crowdzero_android/databinding/ActivityMainBinding.java
  com.example.crowdzero_android.databinding.ActivityMainBinding
+com/example/crowdzero_android/MainActivity.java
+ com.example.crowdzero_android.MainActivity
+ com.example.crowdzero_android.MainActivity$1
+ com.example.crowdzero_android.MainActivity$2
+ com.example.crowdzero_android.MainActivity$3
+ com.example.crowdzero_android.MainActivity$4
+ com.example.crowdzero_android.MainActivity$5
+ com.example.crowdzero_android.MainActivity$6
+ com.example.crowdzero_android.MainActivity$7
+ com.example.crowdzero_android.MainActivity$8
 com/example/crowdzero_android/PontosActivity.java
  com.example.crowdzero_android.PontosActivity
  com.example.crowdzero_android.PontosActivity$1
@@ -107,5 +114,3 @@ com/example/crowdzero_android/PontosActivity.java
  com.example.crowdzero_android.PontosActivity$3
  com.example.crowdzero_android.PontosActivity$4
  com.example.crowdzero_android.PontosActivity$5
-com/example/crowdzero_android/databinding/ActivityLoginBinding.java
- com.example.crowdzero_android.databinding.ActivityLoginBinding

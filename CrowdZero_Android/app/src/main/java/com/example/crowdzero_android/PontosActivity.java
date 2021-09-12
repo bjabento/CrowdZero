@@ -32,7 +32,7 @@ public class PontosActivity extends AppCompatActivity {
     String nome;
     TextView user, cargo, points, rank;
     ImageView icon;
-    int pontos;
+    private int pontos, n;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +107,7 @@ public class PontosActivity extends AppCompatActivity {
     }
 
     private void rank() {
-
-        String urlRank ="https://crowdzeromapi.herokuapp.com/user";
+        String urlRank ="https://crowdzeromapi.herokuapp.com/getSortedPoints";
         RequestQueue queueRank = Volley.newRequestQueue(this);
 
         StringRequest srR = new StringRequest(Request.Method.GET, urlRank,
@@ -118,11 +117,12 @@ public class PontosActivity extends AppCompatActivity {
                         Log.e("HttpClient", "success! response: " + response.toString());
                         try {
                             JSONObject newData = new JSONObject(response);
-                            JSONArray dataArray = newData.getJSONArray("user");
+                            JSONArray dataArray = newData.getJSONArray("results");
 
                             for (int i = 0; i < dataArray.length(); i++){
+                                n++;
                                 if (Integer.valueOf(dataArray.getJSONObject(i).get("idu").toString()) == Integer.valueOf(session.getId())) {
-                                    rank.setText("#" + i + "/" + dataArray.length());
+                                    rank.setText("#" + n + "/" + dataArray.length());
                                     break;
                                 }
                             }

@@ -54,11 +54,13 @@ import java.util.Map;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    private ImageView backButton, icon;
-    TextInputLayout email, nome, pass, cont;
+    private ImageView icon;
+    TextInputLayout email, nome, pass, cont, caci;
     TextView name, points;
     int pontos;
+    //String google;
     Session session;
+    Button edit, save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +73,14 @@ public class PerfilActivity extends AppCompatActivity {
         email = (TextInputLayout) findViewById(R.id.txtEmail);
         pass = (TextInputLayout) findViewById(R.id.txtPassword);
         cont = (TextInputLayout) findViewById(R.id.txtContact);
+        caci = (TextInputLayout) findViewById(R.id.txtCc);
         name = findViewById(R.id.txtUsername);
         points = findViewById(R.id.txtCargo);
         icon = findViewById(R.id.imageView4);
+        edit = findViewById(R.id.btnEditar);
+        save = findViewById(R.id.btnGuardar);
+
+        popText();
 
         findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +88,21 @@ public class PerfilActivity extends AppCompatActivity {
                 finish();
             }
         });
+        findViewById(R.id.btnEditar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editar();
+            }
+        });
+        findViewById(R.id.btnGuardar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guardar();
+            }
+        });
+    }
 
+    private void popText() {
         String url ="https://crowdzeromapi.herokuapp.com/userData";
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -100,6 +121,8 @@ public class PerfilActivity extends AppCompatActivity {
                                 email.getEditText().setText((String) dataArray.getJSONObject(i).get("email"));
                                 pass.getEditText().setText((String) dataArray.getJSONObject(i).get("pass"));
                                 cont.getEditText().setText(dataArray.getJSONObject(i).get("contacto").toString());
+                                caci.getEditText().setText(dataArray.getJSONObject(i).get("cc").toString());
+                                //google = String.valueOf(dataArray.getJSONObject(i).get("idgoogle").toString());
 
                                 points.setText(String.valueOf(pontos));
                                 if (pontos <= 50){
@@ -112,6 +135,8 @@ public class PerfilActivity extends AppCompatActivity {
                                     points.setText("Agente de Saúde");
                                     icon.setImageResource(R.drawable.avatar3);
                                 }
+
+                                //Toast.makeText( PerfilActivity.this, google.toString(), Toast.LENGTH_SHORT).show();
                             }
                         }catch(Error | JSONException error) {
                             Toast.makeText(PerfilActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
@@ -138,6 +163,64 @@ public class PerfilActivity extends AppCompatActivity {
             }
         };
         queue.add(sr);
+    }
 
+    private void editar() {
+        email.setEnabled(true);
+        nome.setEnabled(true);
+        pass.setEnabled(true);
+        cont.setEnabled(true);
+        caci.setEnabled(true);
+
+        edit.setVisibility(View.INVISIBLE);
+        save.setVisibility(View.VISIBLE);
+    }
+
+    private void guardar() {
+        String urlUpdU ="https://crowdzeromapi.herokuapp.com/updateUser/" + session.getId();
+        RequestQueue queueUpU = Volley.newRequestQueue(this);
+
+        StringRequest reqUpdat = new StringRequest(Request.Method.POST, urlUpdU,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            if (!response.equals("Success")){
+                                Toast.makeText(PerfilActivity.this, "Dados atualizados com sucesso", Toast.LENGTH_SHORT).show();
+                            }
+                            else if (!response.equals("Fail")){
+                                Toast.makeText(PerfilActivity.this, "Erro ao atualizar", Toast.LENGTH_SHORT).show();
+                            }
+                        }catch(Error error) {
+                            Toast.makeText(PerfilActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("HttpClient", "error: " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("car", points.getText().toString());
+                params.put("nom", nome.getEditText().getText().toString());
+                params.put("ema", email.getEditText().getText().toString());
+                params.put("pas", pass.getEditText().getText().toString());
+                params.put("con", cont.getEditText().getText().toString());
+                params.put("cci", caci.getEditText().getText().toString());
+                //params.put("idg", google.toString());
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type","application/x-www-form-urlencoded");
+                return params;
+            }
+        };
+        queueUpU.add(reqUpdat);
     }
 }

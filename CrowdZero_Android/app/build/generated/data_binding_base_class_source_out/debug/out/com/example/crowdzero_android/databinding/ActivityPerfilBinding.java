@@ -26,7 +26,10 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final ImageView btnBack;
 
   @NonNull
-  public final Button button;
+  public final Button btnEditar;
+
+  @NonNull
+  public final Button btnGuardar;
 
   @NonNull
   public final ImageView imageView4;
@@ -36,6 +39,9 @@ public final class ActivityPerfilBinding implements ViewBinding {
 
   @NonNull
   public final TextView txtCargo;
+
+  @NonNull
+  public final TextInputLayout txtCc;
 
   @NonNull
   public final TextInputLayout txtContact;
@@ -53,16 +59,19 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final TextView txtUsername;
 
   private ActivityPerfilBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull Button button, @NonNull ImageView imageView4, @NonNull CardView menuUserBar,
-      @NonNull TextView txtCargo, @NonNull TextInputLayout txtContact,
-      @NonNull TextInputLayout txtEmail, @NonNull TextInputLayout txtName,
-      @NonNull TextInputLayout txtPassword, @NonNull TextView txtUsername) {
+      @NonNull Button btnEditar, @NonNull Button btnGuardar, @NonNull ImageView imageView4,
+      @NonNull CardView menuUserBar, @NonNull TextView txtCargo, @NonNull TextInputLayout txtCc,
+      @NonNull TextInputLayout txtContact, @NonNull TextInputLayout txtEmail,
+      @NonNull TextInputLayout txtName, @NonNull TextInputLayout txtPassword,
+      @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnBack = btnBack;
-    this.button = button;
+    this.btnEditar = btnEditar;
+    this.btnGuardar = btnGuardar;
     this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
     this.txtCargo = txtCargo;
+    this.txtCc = txtCc;
     this.txtContact = txtContact;
     this.txtEmail = txtEmail;
     this.txtName = txtName;
@@ -103,9 +112,15 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button;
-      Button button = rootView.findViewById(id);
-      if (button == null) {
+      id = R.id.btnEditar;
+      Button btnEditar = rootView.findViewById(id);
+      if (btnEditar == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGuardar;
+      Button btnGuardar = rootView.findViewById(id);
+      if (btnGuardar == null) {
         break missingId;
       }
 
@@ -124,6 +139,12 @@ public final class ActivityPerfilBinding implements ViewBinding {
       id = R.id.txtCargo;
       TextView txtCargo = rootView.findViewById(id);
       if (txtCargo == null) {
+        break missingId;
+      }
+
+      id = R.id.txtCc;
+      TextInputLayout txtCc = rootView.findViewById(id);
+      if (txtCc == null) {
         break missingId;
       }
 
@@ -157,8 +178,9 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, button, imageView4,
-          menuUserBar, txtCargo, txtContact, txtEmail, txtName, txtPassword, txtUsername);
+      return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, btnEditar, btnGuardar,
+          imageView4, menuUserBar, txtCargo, txtCc, txtContact, txtEmail, txtName, txtPassword,
+          txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

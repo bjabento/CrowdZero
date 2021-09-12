@@ -1908,7 +1908,9 @@ id bottom
 id bounce
 id btnBack
 id btnContactos
+id btnEditar
 id btnF
+id btnGuardar
 id btnLogin
 id btnLoginG
 id btnLogout
@@ -1925,7 +1927,6 @@ id btnReg
 id btnRegist
 id btnSubmeter
 id btnV
-id button
 id buttonPanel
 id button_first
 id button_second
@@ -2274,6 +2275,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id txtCargo
+id txtCc
 id txtContact
 id txtEmail
 id txtName
