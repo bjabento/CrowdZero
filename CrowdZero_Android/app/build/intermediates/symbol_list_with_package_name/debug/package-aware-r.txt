@@ -1925,6 +1925,7 @@ id btnReg
 id btnRegist
 id btnSubmeter
 id btnV
+id button
 id buttonPanel
 id button_first
 id button_second
@@ -2244,6 +2245,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView6
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2277,6 +2279,7 @@ id txtEmail
 id txtName
 id txtPassLogin
 id txtPassword
+id txtRank
 id txtRegcc
 id txtRegcontacto
 id txtRegemail

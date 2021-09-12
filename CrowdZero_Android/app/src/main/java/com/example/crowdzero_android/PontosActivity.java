@@ -30,7 +30,7 @@ public class PontosActivity extends AppCompatActivity {
 
     Session session;
     String nome;
-    TextView user, cargo, points;
+    TextView user, cargo, points, rank;
     ImageView icon;
     int pontos;
 
@@ -40,10 +40,17 @@ public class PontosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pontos);
 
         session = new Session(this);
+        icon = findViewById(R.id.imageView3);
         user = findViewById(R.id.txtUsername);
         cargo = findViewById(R.id.txtCargo);
         points = findViewById(R.id.pointsnum);
-        icon = findViewById(R.id.imageView3);
+        rank = findViewById(R.id.txtRank);
+
+        carregarPontos();
+        rank();
+    }
+
+    private void carregarPontos() {
 
         Log.d("log1:", nome + pontos);
 
@@ -97,18 +104,38 @@ public class PontosActivity extends AppCompatActivity {
             }
         };
         queue.add(sr);
+    }
 
-        /*user.setText(nome);
-        points.setText(pontos);
-        if (Integer.parseInt(pontos) <= 50){
-            cargo.setText("Cidadão");
-            icon.setImageResource(R.drawable.avatar);
-        } else if (Integer.parseInt(pontos) > 50 && Integer.parseInt(pontos) <= 200) {
-            cargo.setText("Agente Sanitário");
-            icon.setImageResource(R.drawable.saude);
-        } else if (Integer.parseInt(pontos) > 200) {
-            cargo.setText("Agente de Saúde");
-            icon.setImageResource(R.drawable.sanitario);
-        }*/
+    private void rank() {
+
+        String urlRank ="https://crowdzeromapi.herokuapp.com/user";
+        RequestQueue queueRank = Volley.newRequestQueue(this);
+
+        StringRequest srR = new StringRequest(Request.Method.GET, urlRank,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("HttpClient", "success! response: " + response.toString());
+                        try {
+                            JSONObject newData = new JSONObject(response);
+                            JSONArray dataArray = newData.getJSONArray("user");
+
+                            for (int i = 0; i < dataArray.length(); i++){
+                                if (Integer.valueOf(dataArray.getJSONObject(i).get("idu").toString()) == Integer.valueOf(session.getId())) {
+                                    rank.setText("#" + i + "/" + dataArray.length());
+                                    break;
+                                }
+                            }
+                        }catch(Error | JSONException error) {
+                            Toast.makeText(PontosActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("HttpClient", "error: " + error.toString());
+            }
+        });
+        queueRank.add(srR);
     }
 }

@@ -4,6 +4,7 @@ package com.example.crowdzero_android.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -23,6 +24,9 @@ public final class ActivityPerfilBinding implements ViewBinding {
 
   @NonNull
   public final ImageView btnBack;
+
+  @NonNull
+  public final Button button;
 
   @NonNull
   public final ImageView imageView4;
@@ -49,12 +53,13 @@ public final class ActivityPerfilBinding implements ViewBinding {
   public final TextView txtUsername;
 
   private ActivityPerfilBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull ImageView imageView4, @NonNull CardView menuUserBar, @NonNull TextView txtCargo,
-      @NonNull TextInputLayout txtContact, @NonNull TextInputLayout txtEmail,
-      @NonNull TextInputLayout txtName, @NonNull TextInputLayout txtPassword,
-      @NonNull TextView txtUsername) {
+      @NonNull Button button, @NonNull ImageView imageView4, @NonNull CardView menuUserBar,
+      @NonNull TextView txtCargo, @NonNull TextInputLayout txtContact,
+      @NonNull TextInputLayout txtEmail, @NonNull TextInputLayout txtName,
+      @NonNull TextInputLayout txtPassword, @NonNull TextView txtUsername) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.button = button;
     this.imageView4 = imageView4;
     this.menuUserBar = menuUserBar;
     this.txtCargo = txtCargo;
@@ -95,6 +100,12 @@ public final class ActivityPerfilBinding implements ViewBinding {
       id = R.id.btnBack;
       ImageView btnBack = rootView.findViewById(id);
       if (btnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.button;
+      Button button = rootView.findViewById(id);
+      if (button == null) {
         break missingId;
       }
 
@@ -146,7 +157,7 @@ public final class ActivityPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, imageView4,
+      return new ActivityPerfilBinding((ConstraintLayout) rootView, btnBack, button, imageView4,
           menuUserBar, txtCargo, txtContact, txtEmail, txtName, txtPassword, txtUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
