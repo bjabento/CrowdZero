@@ -6,5 +6,6 @@ PINT 2021
 <li>Gonçalo Lopes - https://github.com/Goncalo24
 <li>Gustavo Coelho - https://github.com/gustavosc14
 <li>Trello: https://trello.com/b/WmWOsxvV/crowdzero
+<li>API Crowdzero Rep: https://github.com/bjabento/APIHeroku
 <li>Database alloc: Heroku
 <ul>
